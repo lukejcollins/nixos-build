@@ -1,3 +1,5 @@
+[![NixOS](https://img.shields.io/badge/NixOS-unstable-blue.svg?logo=nixos)](https://nixos.org/) [![Sway](https://img.shields.io/badge/Sway-customised-blue.svg?logo=gumtree)](https://swaywm.org/)
+
 # Sway Custom Configuration Flake
 
 This flake provides a custom configuration for building [Sway](https://swaywm.org/), a tiling Wayland compositor, along with other related tools such as Waybar, Wob, and Blueman. It integrates with the [Home Manager](https://github.com/nix-community/home-manager) project and is designed for the Nix package manager.
