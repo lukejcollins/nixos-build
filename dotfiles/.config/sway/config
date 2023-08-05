@@ -22,7 +22,7 @@
    set $right l
 
    # Your preferred terminal emulator
-   set $term alacritty
+   set $term foot
 
    # Variables for wob
    set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock

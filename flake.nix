@@ -13,7 +13,7 @@
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ({ pkgs, lib, ... }: {
-            home.packages = with pkgs; [ sway waybar wob blueman ];
+            home.packages = with pkgs; [ sway waybar wob blueman github-cli neovim foot firefox ];
 
 	   home.file.".config/sway/config".source = ./dotfiles/.config/sway/config;
 	   home.file.".config/waybar/config".source = ./dotfiles/.config/waybar/config;
@@ -21,13 +21,14 @@
               
             home.sessionVariables = {
               WLR_NO_HARDWARE_CURSORS = "1";
-              PATH = "${pkgs.sway}/bin:${pkgs.waybar}/bin:${pkgs.wob}/bin:${pkgs.blueman}/bin:$PATH";
+              PATH = "${pkgs.sway}/bin:${pkgs.waybar}/bin:${pkgs.wob}/bin:${pkgs.blueman}/bin:${pkgs.github-cli}/bin:${pkgs.neovim}/bin:${pkgs.foot}/bin:${pkgs.firefox}/bin:$PATH";
             };
 
             programs.bash = {
               enable = true;
               shellAliases = {
                 ll = "ls -l";
+		vim = "nvim";
               };
             };
 
