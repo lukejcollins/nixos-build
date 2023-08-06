@@ -67,9 +67,6 @@
 
 
 ### Custom theme settings ###
-   # Change font
-   font pango:Cantarell 14px
-
    # Border settings
    default_border none
    default_floating_border none
@@ -78,7 +75,7 @@
    gaps inner 5
 
    # Wallpaper
-   output * bg /home/lukecollins/Pictures/wallpaper.png fill
+   output * bg $HOME/Pictures/wallpaper.png fill
 
 
 ### Custom misc settings ###
