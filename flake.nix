@@ -12,13 +12,15 @@
       myUser = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
-          ({ pkgs, lib, ... }: {
+          ({ pkgs, lib, config, ... }: {
             home.packages = with pkgs; [ sway waybar wob blueman github-cli neovim foot firefox ];
+            home.username = self.userConfig.username;
+            home.homeDirectory = self.userConfig.homeDirectory;
 
-	   home.file.".config/sway/config".source = ./dotfiles/.config/sway/config;
-	   home.file.".config/waybar/config".source = ./dotfiles/.config/waybar/config;
-	   home.file.".config/waybar/style.css".source = ./dotfiles/.config/waybar/style.css;
-              
+            home.file.".config/sway/config".source = ./dotfiles/.config/sway/config;
+            home.file.".config/waybar/config".source = ./dotfiles/.config/waybar/config;
+            home.file.".config/waybar/style.css".source = ./dotfiles/.config/waybar/style.css;
+
             home.sessionVariables = {
               WLR_NO_HARDWARE_CURSORS = "1";
               PATH = "${pkgs.sway}/bin:${pkgs.waybar}/bin:${pkgs.wob}/bin:${pkgs.blueman}/bin:${pkgs.github-cli}/bin:${pkgs.neovim}/bin:${pkgs.foot}/bin:${pkgs.firefox}/bin:$PATH";
@@ -28,12 +30,10 @@
               enable = true;
               shellAliases = {
                 ll = "ls -l";
-		vim = "nvim";
+                vim = "nvim";
               };
             };
 
-            home.username = "lukecollins";
-            home.homeDirectory = "/home/lukecollins";
             home.stateVersion = "22.05";
           })
         ];
@@ -41,3 +41,4 @@
     };
   };
 }
+
