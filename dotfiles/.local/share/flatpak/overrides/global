@@ -1,0 +1,6 @@
+[Context]
+filesystems=~/.themes
+
+[Environment]
+ADW_DEBUG_COLOR_SCHEME=prefer-dark
+GTK_THEME=Adwaita:dark

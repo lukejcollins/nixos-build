@@ -1,3 +1,4 @@
 result
-build.sh
 init.sh
+generated-files.nix
+hardware-configuration.nix
