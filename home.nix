@@ -42,6 +42,11 @@ in
   home.username = userConfig.username;
   home.homeDirectory = userConfig.homeDirectory;
 
+  # Dconf modifications
+  dconf.settings = {
+    "org/blueman/general/auto-power-on" = { value = true; };
+  };
+
   # Adjust user's PATH to include the Python environment binaries
   home.sessionVariables = {
     PATH = with pkgs; "${myPythonEnv}/bin:$PATH";

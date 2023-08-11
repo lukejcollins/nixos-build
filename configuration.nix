@@ -77,6 +77,7 @@ in {
     alsa-utils
     grim
     bluez
+    dconf
   ];
 
   # OpenGL configuration settings
