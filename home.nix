@@ -14,6 +14,13 @@ let
     pylint
     black
   ]);
+
+  # Enable powerlevel10k
+  powerlevel10kSrc = builtins.fetchGit {
+    url = "https://github.com/romkatv/powerlevel10k.git";
+    rev = "017395a266aa15011c09e64e44a1c98ed91c478c";
+  };
+
 in
 {
   # Enable fontconfig for font management
@@ -52,8 +59,10 @@ in
     PATH = with pkgs; "${myPythonEnv}/bin:$PATH";
   };
 
-  # Include the generated file definitions
-  home.file = generatedFiles;
+  # Include home file definitions
+  home.file = generatedFiles // {
+    "/powerlevel10k".source = powerlevel10kSrc;
+  };
 
   # Specify the state version for home-manager
   home.stateVersion = "22.05";

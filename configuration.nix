@@ -43,6 +43,9 @@ in {
 
   # Specify the Linux kernel package version
   boot.kernelPackages = pkgs.linuxPackages_6_4;
+  
+  # Enable non-free packages
+  nixpkgs.config.allowUnfree = true;
 
   # List of packages to be globally installed on the system
   environment.systemPackages = with pkgs; [
@@ -78,6 +81,10 @@ in {
     grim
     bluez
     dconf
+    tidal-hifi
+    vscode
+    gnome.gnome-boxes
+    meslo-lgs-nf
   ];
 
   # OpenGL configuration settings
