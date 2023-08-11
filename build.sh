@@ -1,4 +1,4 @@
-# This script generates a Nix expression with file paths from the dotfiles directory 
+# This script generates a Nix expression with file paths from the dotfiles directory
 # and then triggers rebuilds for NixOS and home-manager.
 
 # Generate the Nix expression:
