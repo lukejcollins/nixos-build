@@ -13,7 +13,7 @@
 
 ### Custom variables ###
    # Logo key. Use Mod1 for Alt.
-   set $mod Mod1
+   set $mod Mod4
 
    # Home row direction keys, like vim
    set $left h
@@ -22,7 +22,7 @@
    set $right l
 
    # Your preferred terminal emulator
-   set $term foot
+   set $term alacritty
 
    # Variables for wob
    set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
@@ -42,7 +42,7 @@
    bindsym $mod+w exec alacritty -e sh -c 'sleep 0.1; nmtui'
 
    # Launch monitor manager
-   bindsym $mod+d exec nwg-displays
+   bindsym $mod+d exec wdisplays
 
    # Launch bluetooth manager
    bindsym $mod+b exec blueman-manager

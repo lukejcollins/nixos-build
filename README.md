@@ -1,41 +1,48 @@
 [![NixOS](https://img.shields.io/badge/NixOS-unstable-blue.svg?logo=nixos)](https://nixos.org/) [![Sway](https://img.shields.io/badge/Sway-customised-blue.svg?logo=gumtree)](https://swaywm.org/)
 
-# Sway Custom Configuration Flake
+# Sway NixOS Configuration
 
-This flake provides a custom configuration for building [Sway](https://swaywm.org/), a tiling Wayland compositor, along with other related tools such as Waybar, Wob, and Blueman. It integrates with the [Home Manager](https://github.com/nix-community/home-manager) project and is designed for the Nix package manager.
+This repository contains a Nix flake to set up Sway with a custom configuration on NixOS.
 
 ## Description
 
-This flake is designed to manage a user's Sway environment on a system with Nix. It includes customized configurations for Sway, Waybar, Wob, and Blueman, and sets up the necessary session variables and shell aliases.
+A custom tailored NixOS configuration targeting the Sway window manager, complemented with a range of packages to offer a robust and efficient environment.
 
-## Dependencies
+## Prerequisites
 
-- Nixpkgs (NixOS/nixpkgs/nixos-unstable)
-- Home Manager (nix-community/home-manager)
+1. NixOS with flake support enabled.
+2. Ensure you are running on `x86_64-linux` architecture.
 
-## Features
+## Repo Structure
 
-- **Sway**: Tiling Wayland compositor
-- **Waybar**: Highly customizable Wayland bar
-- **Wob**: An overlay volume/backlight/progress bar for Wayland
-- **Blueman**: Manager for Bluetooth devices
-
-## Configuration
-
-The flake includes custom configurations for Sway, Waybar, Wob, and Blueman, which are located in the `dotfiles` directory.
-
-The `PATH` variable is extended to include the binaries of these packages, and a custom shell alias `ll` is defined for convenience.
+- `flake.nix`: The central configuration defining the system and home-manager setups, including dependencies.
+- `user-config.nix`: Contains user-specific configurations like username and home directory.
+- `configuration.nix`: NixOS system configuration.
+- `home.nix`: Contains configurations for the user's environment, including home-manager packages and shell setup.
+- `dotfiles/`: Contains various dotfiles that can be linked or copied to user's home.
+- `build.sh`: Script to automate the deployment process.
 
 ## Usage
 
-To build and activate this configuration, you can use the following command:
+For easy deployment, simply run the provided `build.sh` script:
 
 ```bash
-nix build .#homeConfigurations.myUser.activationPackage --extra-experimental-features nix-command --extra-experimental-features flakes
+./build.sh
 ```
 
-Ensure you have enabled the necessary experimental features for flakes.
+This script takes care of:
+
+1. Generating the required `generated-files.nix` file.
+2. Building and switching to the NixOS system configuration.
+3. Switching to the user-specific home-manager configuration.
+
+**Note**: Make sure the `build.sh` script has executable permissions (`chmod +x build.sh`).
+
+## Dependencies
+
+- `nixpkgs`: Uses the `nixos-unstable` branch of the official NixOS/nixpkgs repository on GitHub.
+- `home-manager`: Sourced from the nix-community's home-manager repository. Note: It follows the same nixpkgs as defined in the flake.
 
 ## Contributing
 
-If you would like to contribute to this project or report issues, please feel free to open an issue or pull request.
+Feel free to raise issues or submit Pull Requests if you find any problems or have suggestions for improvements.

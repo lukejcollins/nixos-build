@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Reboot
+Exec=reboot
+Type=Application
