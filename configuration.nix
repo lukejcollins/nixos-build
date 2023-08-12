@@ -85,6 +85,7 @@ in {
     gnome.gnome-boxes
     shfmt
     mako
+    slurp
   ];
 
   # Create a systemd service for the Mako notification daemon
