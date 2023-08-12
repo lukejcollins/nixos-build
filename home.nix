@@ -21,8 +21,7 @@ let
     rev = "017395a266aa15011c09e64e44a1c98ed91c478c";
   };
 
-in
-{
+in {
   # Enable fontconfig for font management
   fonts.fontconfig.enable = true;
 
@@ -60,7 +59,23 @@ in
   };
 
   # Include home file definitions
-  home.file = generatedFiles // {
+  home.file = {
+    ".config/rofi/config.rasi".source = ./dotfiles/.config/rofi/config.rasi;
+    ".config/rofi/Arc-Dark.rasi".source = ./dotfiles/.config/rofi/Arc-Dark.rasi;
+    ".config/nvim/init.vim".source = ./dotfiles/.config/nvim/init.vim;
+    ".config/waybar/style.css".source = ./dotfiles/.config/waybar/style.css;
+    ".config/waybar/config".source = ./dotfiles/.config/waybar/config;
+    ".config/sway/config".source = ./dotfiles/.config/sway/config;
+    ".config/alacritty/alacritty.yml".source = ./dotfiles/.config/alacritty/alacritty.yml;
+    ".config/swappy/config".source = ./dotfiles/.config/swappy/config;
+    ".zshrc".source = ./dotfiles/.zshrc;
+    ".p10k.zsh".source = ./dotfiles/.p10k.zsh;
+    ".local/bin/sway_split_direction.sh".source = ./dotfiles/.local/bin/sway_split_direction.sh;
+    ".local/bin/set-dark-theme.sh".source = ./dotfiles/.local/bin/set-dark-theme.sh;
+    ".local/share/applications/shutdown.desktop".source = ./dotfiles/.local/share/applications/shutdown.desktop;
+    ".local/share/applications/reboot.desktop".source = ./dotfiles/.local/share/applications/reboot.desktop;
+    ".local/share/applications/logout.desktop".source = ./dotfiles/.local/share/applications/logout.desktop;
+    ".local/share/flatpak/overrides/global".source = ./dotfiles/.local/share/flatpak/overrides/global;
     "/powerlevel10k".source = powerlevel10kSrc;
   };
 
