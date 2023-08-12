@@ -64,7 +64,6 @@ in {
     python3
     python3Packages.pip
     shellcheck
-    go
     wdisplays
     git
     waybar
@@ -84,6 +83,7 @@ in {
     tidal-hifi
     vscode
     gnome.gnome-boxes
+    shfmt
   ];
 
   # OpenGL configuration settings
