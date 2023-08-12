@@ -43,7 +43,7 @@ let
 
     src = pkgs.fetchurl {
       url = "https://github.com/hadolint/hadolint/releases/download/v${version}/hadolint-Linux-x86_64";
-      sha256 = "sha256-1Qz2Xc4Wk2goihteg9fRNHCn99WcIl2aFwgN44MV714=";  # You need to provide the correct sha256 value here
+      sha256 = "sha256-1Qz2Xc4Wk2goihteg9fRNHCn99WcIl2aFwgN44MV714="; # You need to provide the correct sha256 value here
       executable = true;
     };
 
@@ -96,7 +96,8 @@ let
     sha256 = "0lm582jb9y571jpny8pkp72i8ms6ncrij99v0r8zc7qmqcic8k8d";
   };
 
-in {
+in
+{
   # Enable fontconfig for font management
   fonts.fontconfig.enable = true;
 
@@ -113,11 +114,11 @@ in {
 
   # ZSH shell configuration
   programs.zsh = {
-    enable = true;  # Enable ZSH as the shell
+    enable = true; # Enable ZSH as the shell
 
     # Set aliases for ZSH shell
     shellAliases = {
-      vim = "nvim";  # Use 'nvim' when 'vim' is called
+      vim = "nvim"; # Use 'nvim' when 'vim' is called
     };
   };
 
