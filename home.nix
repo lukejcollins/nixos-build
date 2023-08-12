@@ -21,6 +21,30 @@ let
     rev = "017395a266aa15011c09e64e44a1c98ed91c478c";
   };
 
+  # MesloLGS NF font files
+  mesloLGSFonts = {
+    Regular = builtins.fetchurl {
+      url = "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf";
+      name = "MesloLGS-NF-Regular.ttf";
+      sha256= "0zg5qvrdi6y2y7dwbwi4d442s78ayjmq72cy2g0dgy4pdqc4cyfr";
+    };
+    Bold = builtins.fetchurl {
+      url = "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf";
+      name = "MesloLGS-NF-Bold.ttf";
+      sha256 = "00v048clvjrg2l49kf0qnfpf0vayj9c0c0pa8f1kqj67yyf1kh5n";
+    };
+    Italic = builtins.fetchurl {
+      url = "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf";
+      name = "MesloLGS-NF-Italic.ttf";
+      sha256 = "1vwjsgf1d8g76sna88lwm1j878xw51cn45d9azhh8xsrwb5pndbg";
+    };
+    BoldItalic = builtins.fetchurl {
+      url = "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf";
+      name = "MesloLGS-NF-Bold-Italic.ttf";
+      sha256 = "080jipmy5jpik27wcvripinmhv9jvlcbivr4ng255h6fvqd17d2n";
+    };
+  };
+
 in {
   # Enable fontconfig for font management
   fonts.fontconfig.enable = true;
@@ -77,6 +101,10 @@ in {
     ".local/share/applications/logout.desktop".source = ./dotfiles/.local/share/applications/logout.desktop;
     ".local/share/flatpak/overrides/global".source = ./dotfiles/.local/share/flatpak/overrides/global;
     "/powerlevel10k".source = powerlevel10kSrc;
+    ".local/share/fonts/MesloLGS-NF/MesloLGS NF Regular.ttf".source = mesloLGSFonts.Regular;
+    ".local/share/fonts/MesloLGS-NF/MesloLGS NF Bold.ttf".source = mesloLGSFonts.Bold;
+    ".local/share/fonts/MesloLGS-NF/MesloLGS NF Italic.ttf".source = mesloLGSFonts.Italic;
+    ".local/share/fonts/MesloLGS-NF/MesloLGS NF Bold Italic.ttf".source = mesloLGSFonts.BoldItalic;
   };
 
   # Specify the state version for home-manager

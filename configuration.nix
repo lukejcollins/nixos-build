@@ -84,7 +84,6 @@ in {
     tidal-hifi
     vscode
     gnome.gnome-boxes
-    meslo-lgs-nf
   ];
 
   # OpenGL configuration settings
