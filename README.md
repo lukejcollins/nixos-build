@@ -32,9 +32,8 @@ For easy deployment, simply run the provided `build.sh` script:
 
 This script takes care of:
 
-1. Generating the required `generated-files.nix` file.
-2. Building and switching to the NixOS system configuration.
-3. Switching to the user-specific home-manager configuration.
+1. Building and switching to the NixOS system configuration.
+2. Switching to the user-specific home-manager configuration.
 
 **Note**: Make sure the `build.sh` script has executable permissions (`chmod +x build.sh`).
 
