@@ -15,12 +15,34 @@ let
     black
   ]);
 
+  # Install Tflint
+  tflintZip = pkgs.fetchurl {
+    url = "https://github.com/terraform-linters/tflint/releases/download/v0.47.0/tflint_linux_amd64.zip";
+    sha256 = "sha256-CGYSO6M7HXPatyDKc6aXbl+18cWVvfGKaE1QYOygmpY="; # You need to provide the sha256 for the downloaded zip file
+  };
+
+  tflint = pkgs.stdenv.mkDerivation {
+    name = "tflint";
+    src = tflintZip;
+
+    nativeBuildInputs = [ pkgs.unzip ];
+
+    unpackPhase = "unzip $src";
+
+    installPhase = ''
+      mkdir -p $out/bin
+      cp tflint $out/bin/
+      chmod 755 $out/bin/tflint
+    '';
+  };
+
   # Enable powerlevel10k
   powerlevel10kSrc = builtins.fetchGit {
     url = "https://github.com/romkatv/powerlevel10k.git";
     rev = "017395a266aa15011c09e64e44a1c98ed91c478c";
   };
 
+  # Install copilot.vim
   copilotSrc = builtins.fetchGit {
     url = "https://github.com/github/copilot.vim";
     rev = "1358e8e45ecedc53daf971924a0541ddf6224faf";
@@ -50,6 +72,7 @@ let
     };
   };
 
+  # Install vim-plug
   vimPlug = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/junegunn/vim-plug/0.11.0/plug.vim";
     sha256 = "0lm582jb9y571jpny8pkp72i8ms6ncrij99v0r8zc7qmqcic8k8d";
@@ -66,6 +89,7 @@ in {
     cantarell-fonts
     noto-fonts
     myPythonEnv
+    tflint
   ];
 
   # ZSH shell configuration
