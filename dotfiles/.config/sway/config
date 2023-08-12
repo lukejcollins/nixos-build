@@ -35,7 +35,7 @@
 
 ### Custom keybindings ###
    # Toggle split direction
-   bindsym $mod+BackSpace exec /home/lukecollins/.local/bin/sway_split_direction.sh
+   bindsym $mod+BackSpace exec $HOME/.local/bin/sway_split_direction.sh
 
    # Launch sound manager
    bindsym $mod+s exec pavucontrol

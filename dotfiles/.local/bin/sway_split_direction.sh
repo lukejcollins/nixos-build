@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Get the workspace of the currently focused container
 workspace=$(swaymsg -t get_workspaces | jq -r '.[] | select(.focused==true).name')
 
