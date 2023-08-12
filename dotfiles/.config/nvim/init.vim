@@ -10,7 +10,7 @@ let g:ale_linters = {
 \   'python': ['flake8', 'pylint'],
 \   'sh': ['shellcheck'],
 \   'dockerfile': ['hadolint'],
-\   'nix': ['nixpkgs-lint'],
+\   'nix': ['statix'],
 \}
 let g:ale_fixers = {}
 let g:ale_fixers['python'] = ['black']

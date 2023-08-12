@@ -92,7 +92,7 @@ in
     slurp
     wl-clipboard
     unzip
-    nixpkgs-lint
+    statix
     nixpkgs-fmt
   ];
 
