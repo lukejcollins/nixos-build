@@ -1,6 +1,6 @@
 /* =============================================================================
  *
- * Waybar configuration
+ * Waybar Configuration
  *
  * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
  *
@@ -10,34 +10,35 @@
  * Keyframes
  * -------------------------------------------------------------------------- */
 
+/* Keyframe for warning blinks, changing the color and background color */
 @keyframes blink-warning {
     70% {
         color: white;
     }
 
-    to {
+    100% {
         color: white;
         background-color: orange;
     }
 }
 
+/* Keyframe for critical blinks, changing the color and background color */
 @keyframes blink-critical {
     70% {
-      color: white;
+        color: white;
     }
 
-    to {
+    100% {
         color: white;
         background-color: red;
     }
 }
 
-
 /* -----------------------------------------------------------------------------
- * Base styles
+ * Base Styles
  * -------------------------------------------------------------------------- */
 
-/* Reset all styles */
+/* Resetting common styles for all elements */
 * {
     border: none;
     border-radius: 0;
@@ -46,7 +47,7 @@
     padding: 0;
 }
 
-/* The whole bar */
+/* Styling the entire bar */
 #waybar {
     background: #000000;
     color: white;
@@ -54,7 +55,7 @@
     font-size: 13px;
 }
 
-/* Each module */
+/* Common padding for each module */
 #battery,
 #clock,
 #cpu,
@@ -65,19 +66,16 @@
 #pulseaudio,
 #temperature,
 #tray {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;  /* shorthand for padding-left and padding-right */
 }
 
-
 /* -----------------------------------------------------------------------------
- * Module styles
+ * Module Styles
  * -------------------------------------------------------------------------- */
 
+/* Battery styling */
 #battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation: linear infinite alternate;  /* shorthand for animation properties */
     padding-right: 5px;
 }
 
@@ -99,15 +97,12 @@
     animation-duration: 2s;
 }
 
+/* Clock styling */
 #clock {
-    padding-left: 0px;
-    padding-right: 5px;
+    padding: 0 5px;  /* shorthand for padding-left and padding-right */
 }
 
-#cpu {
-  /* No styles */
-}
-
+/* CPU styling */
 #cpu.warning {
     color: orange;
 }
@@ -116,10 +111,9 @@
     color: red;
 }
 
+/* Memory styling */
 #memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation: linear infinite alternate;  /* shorthand for animation properties */
 }
 
 #memory.warning {
@@ -132,13 +126,14 @@
     animation-duration: 2s;
 }
 
+/* Mode styling */
 #mode {
     background: #64727D;
     border-top: 2px solid white;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
+    padding-bottom: 2px;  /* compensating for top border */
 }
 
+/* Network styling */
 #network {
     padding-right: 3px;
 }
@@ -147,40 +142,25 @@
     color: orange;
 }
 
-#pulseaudio {
-    /* No styles */
-}
-
-#pulseaudio.muted {
-    /* No styles */
-}
-
+/* Custom Spotify styling */
 #custom-spotify {
     color: rgb(102, 220, 105);
 }
 
-#temperature {
-    /* No styles */
-}
-
+/* Temperature styling */
 #temperature.critical {
     color: red;
 }
 
-#tray {
-    /* No styles */
-}
-
+/* Window styling */
 #window {
     font-weight: bold;
 }
 
+/* Workspaces styling */
 #workspaces button {
-    /*border-top: 2px solid transparent;*/
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
+    /* border-top: 2px solid transparent; (it's commented out, so leaving it as is) */
+    padding: 2px 10px 2px 10px;  /* shorthand for padding-bottom, padding-right, padding-top, and padding-left */
     color: #888888;
 }
 

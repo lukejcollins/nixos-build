@@ -154,7 +154,6 @@ in {
     ".local/share/applications/shutdown.desktop".source = ./dotfiles/.local/share/applications/shutdown.desktop;
     ".local/share/applications/reboot.desktop".source = ./dotfiles/.local/share/applications/reboot.desktop;
     ".local/share/applications/logout.desktop".source = ./dotfiles/.local/share/applications/logout.desktop;
-    ".local/share/flatpak/overrides/global".source = ./dotfiles/.local/share/flatpak/overrides/global;
     ".local/share/nvim/site/autoload/plug.vim".source = vimPlug;
     "/powerlevel10k".source = powerlevel10kSrc;
     ".config/nvim/pack/github/start/copilot.vim".source = copilotSrc;
