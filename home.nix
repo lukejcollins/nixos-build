@@ -50,6 +50,11 @@ let
     };
   };
 
+  vimPlug = builtins.fetchurl {
+    url = "https://raw.githubusercontent.com/junegunn/vim-plug/0.11.0/plug.vim";
+    sha256 = "0lm582jb9y571jpny8pkp72i8ms6ncrij99v0r8zc7qmqcic8k8d";
+  };
+
 in {
   # Enable fontconfig for font management
   fonts.fontconfig.enable = true;
@@ -105,6 +110,7 @@ in {
     ".local/share/applications/reboot.desktop".source = ./dotfiles/.local/share/applications/reboot.desktop;
     ".local/share/applications/logout.desktop".source = ./dotfiles/.local/share/applications/logout.desktop;
     ".local/share/flatpak/overrides/global".source = ./dotfiles/.local/share/flatpak/overrides/global;
+    ".local/share/nvim/site/autoload/plug.vim".source = vimPlug;
     "/powerlevel10k".source = powerlevel10kSrc;
     ".config/nvim/pack/github/start/copilot.vim".source = copilotSrc;
     ".local/share/fonts/MesloLGS-NF/MesloLGS NF Regular.ttf".source = mesloLGSFonts.Regular;
