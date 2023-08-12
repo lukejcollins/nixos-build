@@ -46,6 +46,9 @@ in {
   
   # Enable non-free packages
   nixpkgs.config.allowUnfree = true;
+  
+  # Set timezone
+  time.timeZone = "Europe/London";
 
   # List of packages to be globally installed on the system
   environment.systemPackages = with pkgs; [
