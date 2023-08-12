@@ -19,7 +19,7 @@ in {
     isNormalUser = true;
     home = userConfig.homeDirectory;
     shell = pkgs.zsh; # Setting Zsh as the default shell
-    extraGroups = [ "wheel" "networkmanager" ]; # Adding the user to the wheel group for sudo privileges
+    extraGroups = [ "wheel" "networkmanager" "video" ]; # Adding the user to the wheel group for sudo privileges
   };
 
   # Enable ZSH for the system
@@ -69,7 +69,7 @@ in {
     waybar
     blueman
     github-cli
-    light
+    brightnessctl
     rofi
     dunst
     xfce.thunar

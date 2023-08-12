@@ -53,8 +53,8 @@
    bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $WOBSOCK
 
    # Adjust brightness
-   bindsym XF86MonBrightnessUp exec light -A 10
-   bindsym XF86MonBrightnessDown exec light -U 10
+   bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+   bindsym XF86MonBrightnessDown exec brightnessctl set 10%- -n 1%
 
    # Lock screen
    bindsym $mod+Escape exec swaylock --clock --screenshots --effect-pixelate 5
