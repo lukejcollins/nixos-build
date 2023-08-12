@@ -52,7 +52,7 @@ in {
     alacritty
     neovim
     sway
-    firefox
+    firefox-wayland
     wget
     docker
     wob
@@ -126,4 +126,18 @@ in {
 
   # Enable NetworkManager for network management
   networking.networkmanager.enable = true;
+
+  # Enable PipeWire
+  services.pipewire.enable = true;
+
+  # Enable xdg desktop integration
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
 }

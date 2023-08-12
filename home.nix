@@ -130,9 +130,11 @@ in {
     "org/blueman/general/auto-power-on" = { value = true; };
   };
 
-  # Adjust user's PATH to include the Python environment binaries
+  # Set session variables
   home.sessionVariables = {
     PATH = with pkgs; "${myPythonEnv}/bin:$PATH";
+    MOZ_ENABLE_WAYLAND = 1;
+    XDG_CURRENT_DESKTOP = "sway";
   };
 
   # Include home file definitions

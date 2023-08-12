@@ -11,6 +11,9 @@
    # Launch blueman
    exec --no-startup-id blueman-applet
 
+   # Ensure that the environment variables are correctly set for the user systemd units
+   exec systemctl --user import-environment
+
 ### Custom variables ###
    # Logo key. Use Mod1 for Alt.
    set $mod Mod4
@@ -29,7 +32,6 @@
 
    # Set default launcher
    set $menu rofi -show drun
-
 
 ### Custom keybindings ###
    # Toggle split direction
