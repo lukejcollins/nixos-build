@@ -1,6 +1,6 @@
 // =============================================================================
 //
-// Waybar configuration
+// Waybar Configuration
 //
 // Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
 //
@@ -8,29 +8,17 @@
 
 {
     // -------------------------------------------------------------------------
-    // Global configuration
+    // Global Configuration
     // -------------------------------------------------------------------------
 
     "layer": "top",
-
     "position": "top",
-
-    // If height property would be not present, it'd be calculated dynamically
     "height": 30,
 
-    "modules-left": [
-        "sway/workspaces",
-        "sway/mode"
-    ],
-    "modules-center": [
-    ],
-    "modules-right": [
-        "network",
-        "battery",
-        "clock#date",
-        "clock#time"
-    ],
-
+    // Module positions
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": [],
+    "modules-right": ["network", "battery", "clock#date", "clock#time"],
 
     // -------------------------------------------------------------------------
     // Modules
@@ -38,20 +26,10 @@
 
     "battery": {
         "interval": 10,
-        "states": {
-            "critical": 5
-        },
-        // Connected to AC
+        "states": { "critical": 5 },
         "format": "  {icon}  {capacity}%", // Icon: bolt
-        // Not connected to AC
         "format-discharging": "{icon}  {capacity}%",
-        "format-icons": [
-            "", // Icon: battery-full
-            "", // Icon: battery-three-quarters
-            "", // Icon: battery-half
-            "", // Icon: battery-quarter
-            ""  // Icon: battery-empty
-        ],
+        "format-icons": ["", "", "", "", ""],
         "tooltip": true
     },
 
@@ -62,28 +40,26 @@
     },
 
     "clock#date": {
-      "interval": 10,
-      "format": "  {:%e %b %y}", // Icon: calendar-alt
-      "tooltip-format": "{:%e %b %y}"
+        "interval": 10,
+        "format": "  {:%e %b %y}",
+        "tooltip-format": "{:%e %b %y}"
     },
 
     "cpu": {
         "interval": 5,
         "format": "  {usage}% ({load})", // Icon: microchip
         "states": {
-          "warning": 70,
-          "critical": 90
+            "warning": 70,
+            "critical": 90
         }
     },
 
     "custom/keyboard-layout": {
-      "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-      // Interval set only as a fallback, as the value is updated by signal
-      "interval": 30,
-      "format": "  {}", // Icon: keyboard
-      // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-      "signal": 1, // SIGHUP
-      "tooltip": false
+        "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+        "interval": 30,
+        "format": "  {}", // Icon: keyboard
+        "signal": 1, // SIGHUP
+        "tooltip": false
     },
 
     "memory": {
@@ -129,40 +105,35 @@
         }
     },
 
-    //"pulseaudio": {
-    //    //"scroll-step": 1,
-    //    "format": "{icon}  {volume}%",
-    //    "format-bluetooth": "{icon}  {volume}%",
-    //    "format-muted": "",
-    //    "format-icons": {
-    //        "headphones": "",
-    //        "handsfree": "",
-    //        "headset": "",
-    //        "phone": "",
-    //        "portable": "",
-    //        "car": "",
-    //        "default": ["", ""]
-    //    },
-    //    "on-click": "pavucontrol"
-    //},
+    // Uncomment this block if you want to configure the pulseaudio module
+    /*
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    */
 
     "temperature": {
-      "critical-threshold": 80,
-      "interval": 5,
-      "format": "{icon}  {temperatureC}°C",
-      "format-icons": [
-          "", // Icon: temperature-empty
-          "", // Icon: temperature-quarter
-          "", // Icon: temperature-half
-          "", // Icon: temperature-three-quarters
-          ""  // Icon: temperature-full
-      ],
-      "tooltip": true
+        "critical-threshold": 80,
+        "interval": 5,
+        "format": "{icon}  {temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": true
     },
 
     "tray": {
         "icon-size": 21,
         "spacing": 10
     }
-
 }
