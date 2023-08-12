@@ -57,7 +57,7 @@
    bindsym XF86MonBrightnessDown exec light -U 10
 
    # Lock screen
-   bindsym $mod+Escape exec swaylock-effects --clock --screenshots --effect-pixelate 5
+   bindsym $mod+Escape exec swaylock --clock --screenshots --effect-pixelate 5
 
    # Hotkey for screenshot
    bindsym $mod+p exec grim -g "$(slurp)" - | swappy -f -

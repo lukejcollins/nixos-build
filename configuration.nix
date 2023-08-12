@@ -84,7 +84,35 @@ in {
     vscode
     gnome.gnome-boxes
     shfmt
+    mako
   ];
+
+  # Create a systemd service for the Mako notification daemon
+  systemd.user.services.mako = {
+    enable = true;
+    description = "Mako notification daemon";
+
+    unitConfig = {
+      Type = "simple";
+      After = [ "graphical-session-pre.target" ];
+      PartOf = [ "graphical-session.target" ];
+    };
+
+    serviceConfig = {
+      ExecStart = "${pkgs.mako}/bin/mako";
+      Restart = "always";
+      Environment = [
+        "WAYLAND_DISPLAY=wayland-1"
+      ];
+    };
+
+    wantedBy = [ "graphical-session.target" ];
+  };
+
+  # Enable PAM for Swaylock
+  security.pam.services.swaylock = {
+    allowNullPassword = true;
+  };
 
   # OpenGL configuration settings
   hardware.opengl = {
