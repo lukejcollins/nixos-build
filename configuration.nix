@@ -87,6 +87,7 @@ in {
     mako
     slurp
     wl-clipboard
+    unzip
   ];
 
   # Create a systemd service for the Mako notification daemon
