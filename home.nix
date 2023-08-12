@@ -36,6 +36,24 @@ let
     '';
   };
 
+  # Install Hadolint
+  hadolint = pkgs.stdenv.mkDerivation rec {
+    pname = "hadolint";
+    version = "2.12.0";
+
+    src = pkgs.fetchurl {
+      url = "https://github.com/hadolint/hadolint/releases/download/v${version}/hadolint-Linux-x86_64";
+      sha256 = "sha256-1Qz2Xc4Wk2goihteg9fRNHCn99WcIl2aFwgN44MV714=";  # You need to provide the correct sha256 value here
+      executable = true;
+    };
+
+    dontUnpack = true;
+
+    installPhase = ''
+      install -D $src $out/bin/hadolint
+    '';
+  };
+
   # Enable powerlevel10k
   powerlevel10kSrc = builtins.fetchGit {
     url = "https://github.com/romkatv/powerlevel10k.git";
@@ -90,6 +108,7 @@ in {
     noto-fonts
     myPythonEnv
     tflint
+    hadolint
   ];
 
   # ZSH shell configuration
