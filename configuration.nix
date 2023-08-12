@@ -4,7 +4,8 @@ let
   # Import user-specific configuration
   userConfig = import ./user-config.nix;
 
-in {
+in
+{
   # Include hardware-specific configurations
   imports = [
     ./hardware-configuration.nix
@@ -43,10 +44,10 @@ in {
 
   # Specify the Linux kernel package version
   boot.kernelPackages = pkgs.linuxPackages_6_4;
-  
+
   # Enable non-free packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # Set timezone
   time.timeZone = "Europe/London";
 
