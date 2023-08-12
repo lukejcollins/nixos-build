@@ -21,12 +21,17 @@ let
     rev = "017395a266aa15011c09e64e44a1c98ed91c478c";
   };
 
+  copilotSrc = builtins.fetchGit {
+    url = "https://github.com/github/copilot.vim";
+    rev = "1358e8e45ecedc53daf971924a0541ddf6224faf";
+  };
+
   # MesloLGS NF font files
   mesloLGSFonts = {
     Regular = builtins.fetchurl {
       url = "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf";
       name = "MesloLGS-NF-Regular.ttf";
-      sha256= "0zg5qvrdi6y2y7dwbwi4d442s78ayjmq72cy2g0dgy4pdqc4cyfr";
+      sha256 = "0zg5qvrdi6y2y7dwbwi4d442s78ayjmq72cy2g0dgy4pdqc4cyfr";
     };
     Bold = builtins.fetchurl {
       url = "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf";
@@ -101,6 +106,7 @@ in {
     ".local/share/applications/logout.desktop".source = ./dotfiles/.local/share/applications/logout.desktop;
     ".local/share/flatpak/overrides/global".source = ./dotfiles/.local/share/flatpak/overrides/global;
     "/powerlevel10k".source = powerlevel10kSrc;
+    ".config/nvim/pack/github/start/copilot.vim".source = copilotSrc;
     ".local/share/fonts/MesloLGS-NF/MesloLGS NF Regular.ttf".source = mesloLGSFonts.Regular;
     ".local/share/fonts/MesloLGS-NF/MesloLGS NF Bold.ttf".source = mesloLGSFonts.Bold;
     ".local/share/fonts/MesloLGS-NF/MesloLGS NF Italic.ttf".source = mesloLGSFonts.Italic;
