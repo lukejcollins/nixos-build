@@ -91,6 +91,8 @@ in {
     slurp
     wl-clipboard
     unzip
+    nixpkgs-lint
+    nixpkgs-fmt
   ];
 
   # Create a systemd service for the Mako notification daemon
