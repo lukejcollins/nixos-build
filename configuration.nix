@@ -96,6 +96,9 @@ in
     nixpkgs-fmt
   ];
 
+  # Enable Docker
+  virtualisation.docker.enable = true;
+
   # Create a systemd service for the Mako notification daemon
   systemd.user.services.mako = {
     enable = true;
