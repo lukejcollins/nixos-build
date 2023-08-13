@@ -1,42 +1,30 @@
 /* =============================================================================
  *
- * Waybar Configuration
- *
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ * Waybar inspired by rofi theme
  *
  * =========================================================================== */
 
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
-
-/* Keyframe for warning blinks, changing the color and background color */
+/* Keyframe for warning blinks */
 @keyframes blink-warning {
     70% {
-        color: white;
+        color: #FFFFFF;
     }
-
     100% {
-        color: white;
-        background-color: orange;
+        color: #FFFFFF;
+        background-color: #FFA500;
     }
 }
 
-/* Keyframe for critical blinks, changing the color and background color */
+/* Keyframe for critical blinks */
 @keyframes blink-critical {
     70% {
-        color: white;
+        color: #FFFFFF;
     }
-
     100% {
-        color: white;
-        background-color: red;
+        color: #FFFFFF;
+        background-color: #FF0000;
     }
 }
-
-/* -----------------------------------------------------------------------------
- * Base Styles
- * -------------------------------------------------------------------------- */
 
 /* Resetting common styles for all elements */
 * {
@@ -49,8 +37,8 @@
 
 /* Styling the entire bar */
 #waybar {
-    background: #000000;
-    color: white;
+    background: #2D303B;
+    color: #C4CBD4;
     font-family: Cantarell, Noto Sans, sans-serif, "Font Awesome 5 Free";
     font-size: 13px;
 }
@@ -66,25 +54,21 @@
 #pulseaudio,
 #temperature,
 #tray {
-    padding: 0 10px;  /* shorthand for padding-left and padding-right */
+    padding: 0 10px;
 }
-
-/* -----------------------------------------------------------------------------
- * Module Styles
- * -------------------------------------------------------------------------- */
 
 /* Battery styling */
 #battery {
-    animation: linear infinite alternate;  /* shorthand for animation properties */
+    animation: linear infinite alternate;
     padding-right: 5px;
 }
 
 #battery.warning {
-    color: orange;
+    color: #DC322F;
 }
 
 #battery.critical {
-    color: red;
+    color: #CC6666;
 }
 
 #battery.warning.discharging {
@@ -99,38 +83,38 @@
 
 /* Clock styling */
 #clock {
-    padding: 0 5px;  /* shorthand for padding-left and padding-right */
+    padding: 0 5px;
 }
 
 /* CPU styling */
 #cpu.warning {
-    color: orange;
+    color: #DC322F;
 }
 
 #cpu.critical {
-    color: red;
+    color: #CC6666;
 }
 
 /* Memory styling */
 #memory {
-    animation: linear infinite alternate;  /* shorthand for animation properties */
+    animation: linear infinite alternate;
 }
 
 #memory.warning {
-    color: orange;
+    color: #DC322F;
 }
 
 #memory.critical {
-    color: red;
+    color: #CC6666;
     animation-name: blink-critical;
     animation-duration: 2s;
 }
 
 /* Mode styling */
 #mode {
-    background: #64727D;
-    border-top: 2px solid white;
-    padding-bottom: 2px;  /* compensating for top border */
+    background: #4B5160;
+    border-top: 2px solid #7C8389;
+    padding-bottom: 2px;
 }
 
 /* Network styling */
@@ -139,17 +123,17 @@
 }
 
 #network.disconnected {
-    color: orange;
+    color: #DC322F;
 }
 
 /* Custom Spotify styling */
 #custom-spotify {
-    color: rgb(102, 220, 105);
+    color: #268BD2;
 }
 
 /* Temperature styling */
 #temperature.critical {
-    color: red;
+    color: #CC6666;
 }
 
 /* Window styling */
@@ -159,18 +143,17 @@
 
 /* Workspaces styling */
 #workspaces button {
-    /* border-top: 2px solid transparent; (it's commented out, so leaving it as is) */
-    padding: 2px 10px 2px 10px;  /* shorthand for padding-bottom, padding-right, padding-top, and padding-left */
-    color: #888888;
+    color: #586875;
+    background-color: #404155;
+    padding: 2px 10px 2px 10px;
 }
 
 #workspaces button.focused {
-    border-color: #4c7899;
-    color: black;
-    background-color: white;
+    color: #F9F9F9;
+    background-color: #4084D6;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+    color: #F9F9F9;
+    background-color: #A54242;
 }

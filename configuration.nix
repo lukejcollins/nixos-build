@@ -94,6 +94,7 @@ in
     unzip
     statix
     nixpkgs-fmt
+    neofetch
   ];
 
   # Enable Docker
