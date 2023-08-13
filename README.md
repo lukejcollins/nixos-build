@@ -12,11 +12,18 @@ A custom tailored NixOS configuration targeting the Sway window manager, complem
 
 1. NixOS with flake support enabled.
 2. Ensure you are running on `x86_64-linux` architecture.
+3. Create a nix file named `user-config.nix` in the root of the repository with the following format:
+
+```nix
+{
+  username = "yourUsername";      # Replace 'yourUsername' with your actual username
+  homeDirectory = "/home/yourUsername";  # Adjust the path accordingly
+}
+```
 
 ## Repo Structure
 
 - `flake.nix`: The central configuration defining the system and home-manager setups, including dependencies.
-- `user-config.nix`: Contains user-specific configurations like username and home directory.
 - `configuration.nix`: NixOS system configuration.
 - `home.nix`: Contains configurations for the user's environment, including home-manager packages and shell setup.
 - `dotfiles/`: Contains various dotfiles that can be linked or copied to user's home.
