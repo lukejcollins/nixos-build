@@ -1,35 +1,25 @@
 { pkgs, lib, config, ... }:
 
 let
-  # Import user-specific configuration
+  # Import user-specific and generated file configurations
   userConfig = import ./user-config.nix;
 
-  # Import generated file definitions
-  generatedFiles = import ./generated-files.nix;
-
-  # Define a Python environment with the specified packages
+  # Python Environment Definition
   myPythonEnv = pkgs.python3.withPackages (ps: with ps; [
-    pynvim
-    flake8
-    pylint
-    black
-    requests
+    pynvim flake8 pylint black requests
   ]);
 
-  # Install Tflint
+  # Tflint Installation Definition
   tflintZip = pkgs.fetchurl {
     url = "https://github.com/terraform-linters/tflint/releases/download/v0.47.0/tflint_linux_amd64.zip";
-    sha256 = "sha256-CGYSO6M7HXPatyDKc6aXbl+18cWVvfGKaE1QYOygmpY="; # You need to provide the sha256 for the downloaded zip file
+    sha256 = "sha256-CGYSO6M7HXPatyDKc6aXbl+18cWVvfGKaE1QYOygmpY=";
   };
 
   tflint = pkgs.stdenv.mkDerivation {
     name = "tflint";
     src = tflintZip;
-
     nativeBuildInputs = [ pkgs.unzip ];
-
     unpackPhase = "unzip $src";
-
     installPhase = ''
       mkdir -p $out/bin
       cp tflint $out/bin/
@@ -37,37 +27,33 @@ let
     '';
   };
 
-  # Install Hadolint
+  # Hadolint Installation Definition
   hadolint = pkgs.stdenv.mkDerivation rec {
     pname = "hadolint";
     version = "2.12.0";
-
     src = pkgs.fetchurl {
       url = "https://github.com/hadolint/hadolint/releases/download/v${version}/hadolint-Linux-x86_64";
-      sha256 = "sha256-1Qz2Xc4Wk2goihteg9fRNHCn99WcIl2aFwgN44MV714="; # You need to provide the correct sha256 value here
+      sha256 = "sha256-1Qz2Xc4Wk2goihteg9fRNHCn99WcIl2aFwgN44MV714=";
       executable = true;
     };
-
     dontUnpack = true;
-
     installPhase = ''
       install -D $src $out/bin/hadolint
     '';
   };
 
-  # Enable powerlevel10k
+  # Powerlevel10k and Copilot.vim Git Sources
   powerlevel10kSrc = builtins.fetchGit {
     url = "https://github.com/romkatv/powerlevel10k.git";
     rev = "017395a266aa15011c09e64e44a1c98ed91c478c";
   };
 
-  # Install copilot.vim
   copilotSrc = builtins.fetchGit {
     url = "https://github.com/github/copilot.vim";
     rev = "1358e8e45ecedc53daf971924a0541ddf6224faf";
   };
 
-  # MesloLGS NF font files
+  # MesloLGS NF Font Definitions
   mesloLGSFonts = {
     Regular = builtins.fetchurl {
       url = "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf";
@@ -91,7 +77,7 @@ let
     };
   };
 
-  # Install vim-plug
+  # Vim Plug Installation Definition
   vimPlug = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/junegunn/vim-plug/0.11.0/plug.vim";
     sha256 = "0lm582jb9y571jpny8pkp72i8ms6ncrij99v0r8zc7qmqcic8k8d";
@@ -99,47 +85,38 @@ let
 
 in
 {
-  # Enable fontconfig for font management
+  # Font Configuration
   fonts.fontconfig.enable = true;
 
-  # Specify packages to be installed for the user
+  # Package Installation
   home.packages = with pkgs; [
-    fontconfig
-    font-awesome_5
-    cantarell-fonts
-    noto-fonts
-    myPythonEnv
-    tflint
-    hadolint
+    fontconfig font-awesome_5 cantarell-fonts noto-fonts
+    myPythonEnv tflint hadolint
   ];
 
-  # ZSH shell configuration
+  # ZSH Configuration
   programs.zsh = {
-    enable = true; # Enable ZSH as the shell
-
-    # Set aliases for ZSH shell
-    shellAliases = {
-      vim = "nvim"; # Use 'nvim' when 'vim' is called
-    };
+    enable = true;
+    shellAliases = { vim = "nvim"; };
   };
 
-  # Set user-specific details from the imported configuration
+  # User Specific Configuration
   home.username = userConfig.username;
   home.homeDirectory = userConfig.homeDirectory;
 
-  # Dconf modifications
+  # Dconf Settings
   dconf.settings = {
     "org/blueman/general/auto-power-on" = { value = true; };
   };
 
-  # Set session variables
+  # Session Variables
   home.sessionVariables = {
     PATH = with pkgs; "${myPythonEnv}/bin:$PATH";
     MOZ_ENABLE_WAYLAND = 1;
     XDG_CURRENT_DESKTOP = "sway";
   };
 
-  # Include home file definitions
+  # Home File Definitions
   home.file = {
     ".config/rofi/config.rasi".source = ./dotfiles/.config/rofi/config.rasi;
     ".config/rofi/Arc-Dark.rasi".source = ./dotfiles/.config/rofi/Arc-Dark.rasi;
@@ -165,6 +142,6 @@ in
     ".local/share/fonts/MesloLGS-NF/MesloLGS NF Bold Italic.ttf".source = mesloLGSFonts.BoldItalic;
   };
 
-  # Specify the state version for home-manager
-  home.stateVersion = "22.05";
+  # Home Manager State Version
+  home.stateVersion = "23.05";
 }
