@@ -13,6 +13,7 @@ let
     flake8
     pylint
     black
+    requests
   ]);
 
   # Install Tflint
