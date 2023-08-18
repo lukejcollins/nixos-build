@@ -16,6 +16,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_6_4; # Specify the Linux kernel package version
+  hardware.enableAllFirmware = true;
   
   # User Configurations
   users.users.${userConfig.username} = {
@@ -37,8 +38,18 @@ in
 
   # Sound and Media Configurations
   sound.enable = true; # Enable sound support
-  hardware.pulseaudio.enable = true; # Enable PulseAudio for sound management
-  services.pipewire.enable = true; # Enable PipeWire
+  security.rtkit.enable = true; # Enable RTKit for low-latency audio
+  services.pipewire = { # Enable PipeWire for audio support
+    enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true; # If you want to enable 32 bit application support
+    };
+    jack = {
+      enable = true; 
+    };
+    pulse.enable = true; # This enables the PulseAudio compatibility modules
+  };
 
   # Network and Bluetooth Configurations
   networking.networkmanager.enable = true; # Enable NetworkManager for network management
@@ -46,6 +57,11 @@ in
     enable = true;
     package = pkgs.bluezFull; # Use the full Bluez package for Bluetooth support
     powerOnBoot = true; # Power on Bluetooth devices at boot
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
   };
   services.blueman.enable = true; # Blueman service for managing Bluetooth
 
