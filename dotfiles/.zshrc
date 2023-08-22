@@ -46,6 +46,9 @@ alias vim='nvim'
 # Flake build alias
 alias flake-build='sudo nixos-rebuild switch --flake "$(pwd)#mySystem" && home-manager switch --flake "$(pwd)#myUser" --extra-experimental-features nix-command --extra-experimental-features flakes'
 
+# Flake update
+alias flake-update='sudo nix flake update --extra-experimental-features nix-command --extra-experimental-features flakes'
+
 # ===============
 # Miscellaneous Configurations
 # ===============
