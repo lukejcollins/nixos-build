@@ -79,6 +79,32 @@
    # Wallpaper
    output * bg $HOME/Pictures/wallpaper.png fill
 
+### SwayFX ###
+   # window corner radius in px
+   corner_radius 10
+
+   # Window background blur
+   blur on
+   blur_xray off
+   blur_passes 2
+   blur_radius 5
+
+   # Shadows
+   shadows on
+   shadows_on_csd on
+   shadow_blur_radius 3
+   shadow_color #0000007F
+
+   # Dim inactive
+   default_dim_inactive 0.1
+   dim_inactive_colors.unfocused #000000FF
+   dim_inactive_colors.urgent #900000FF
+
+   # Move minimized windows into Scratchpad
+   scratchpad_minimize disable
+
+   # Layer effects
+   layer_effects "waybar" blur on; corner_radius 10; shadows on
 
 ### Custom misc settings ###
    # Touchpad two finger click
