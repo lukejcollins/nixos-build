@@ -5,6 +5,9 @@
    # Change GTK to dark theme
    exec --no-startup-id ~/.local/bin/set-dark-theme.sh
 
+   # Execute lid close script
+   exec --no-startup-id ~/.local/bin/lid-close.sh
+
    # Initialise wob
    exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
