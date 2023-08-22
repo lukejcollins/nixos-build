@@ -130,6 +130,7 @@ in
     ".p10k.zsh".source = ./dotfiles/.p10k.zsh;
     ".local/bin/sway_split_direction.sh".source = ./dotfiles/.local/bin/sway_split_direction.sh;
     ".local/bin/set-dark-theme.sh".source = ./dotfiles/.local/bin/set-dark-theme.sh;
+    ".local/bin/lid-close.sh".source = ./dotfiles/.local/bin/lid-close.sh;
     ".local/share/applications/shutdown.desktop".source = ./dotfiles/.local/share/applications/shutdown.desktop;
     ".local/share/applications/reboot.desktop".source = ./dotfiles/.local/share/applications/reboot.desktop;
     ".local/share/applications/logout.desktop".source = ./dotfiles/.local/share/applications/logout.desktop;
