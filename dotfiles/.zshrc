@@ -49,6 +49,9 @@ alias flake-build='sudo nixos-rebuild switch --flake "$(pwd)#mySystem" && home-m
 # Flake update
 alias flake-update='sudo nix flake update --extra-experimental-features nix-command --extra-experimental-features flakes'
 
+# NixOS clean
+alias nixos-clean='sudo nix-env --delete-generations old -p /nix/var/nix/profiles/system && sudo nix-collect-garbage -d'
+
 # ===============
 # Miscellaneous Configurations
 # ===============
