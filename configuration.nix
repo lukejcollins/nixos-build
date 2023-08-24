@@ -72,21 +72,21 @@ in
   services.blueman.enable = true; # Blueman service for managing Bluetooth
 
   # Graphical and Display Configurations
-  systemd.user.services.mako = { # Create a systemd service for Mako notifications
-    enable = true;
-    description = "Mako notification daemon";
-    unitConfig = {
-      Type = "simple";
-      After = [ "graphical-session-pre.target" ];
-      PartOf = [ "graphical-session.target" ];
-    };
-    serviceConfig = {
-      ExecStart = "${pkgs.mako}/bin/mako";
-      Restart = "always";
-      Environment = [ "WAYLAND_DISPLAY=wayland-1" ];
-    };
-    wantedBy = [ "graphical-session.target" ];
-  };
+  #systemd.user.services.mako = { # Create a systemd service for Mako notifications
+  #  enable = true;
+  #  description = "Mako notification daemon";
+  #  unitConfig = {
+  #    Type = "simple";
+  #    After = [ "graphical-session-pre.target" ];
+  #    PartOf = [ "graphical-session.target" ];
+  #  };
+  #  serviceConfig = {
+  #    ExecStart = "${pkgs.mako}/bin/mako";
+  #    Restart = "always";
+  #    Environment = [ "WAYLAND_DISPLAY=wayland-1" ];
+  #  };
+  #  wantedBy = [ "graphical-session.target" ];
+  #};
   security.pam.services.swaylock = { allowNullPassword = true; }; # Enable PAM for Swaylock
   hardware.opengl = {
     enable = true; # Enable OpenGL support
