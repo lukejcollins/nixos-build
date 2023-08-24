@@ -32,7 +32,7 @@ in
     alacritty neovim firefox-wayland wget docker wob libfido2 gh swappy swaylock-effects
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez dconf tidal-hifi vscode gnome.gnome-boxes 
-    shfmt mako slurp wl-clipboard unzip statix nixpkgs-fmt neofetch rofi
+    shfmt mako slurp wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland
     (waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; })    )
   ];
   virtualisation.docker.enable = true; # Enable Docker
