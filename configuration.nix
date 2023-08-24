@@ -33,20 +33,16 @@ in
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez dconf tidal-hifi vscode gnome.gnome-boxes 
     shfmt mako slurp wl-clipboard unzip statix nixpkgs-fmt neofetch rofi
+    (waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; })    )
   ];
   virtualisation.docker.enable = true; # Enable Docker
-  programs.waybar = {
-    enable = true;
-    package = pkgs.waybar.overrideAttrs (oldAttrs: {
-     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    });
-  };
 
   # Sound and Media Configurations
   sound.enable = true; # Enable sound support
   security.rtkit.enable = true; # Enable RTKit for low-latency audio
   services.pipewire = { # Enable PipeWire for audio support
     enable = true;
+    wireplumber.enable = true;
     alsa = {
       enable = true;
       support32Bit = true; # If you want to enable 32 bit application support
@@ -70,23 +66,6 @@ in
     };
   };
   services.blueman.enable = true; # Blueman service for managing Bluetooth
-
-  # Graphical and Display Configurations
-  #systemd.user.services.mako = { # Create a systemd service for Mako notifications
-  #  enable = true;
-  #  description = "Mako notification daemon";
-  #  unitConfig = {
-  #    Type = "simple";
-  #    After = [ "graphical-session-pre.target" ];
-  #    PartOf = [ "graphical-session.target" ];
-  #  };
-  #  serviceConfig = {
-  #    ExecStart = "${pkgs.mako}/bin/mako";
-  #    Restart = "always";
-  #    Environment = [ "WAYLAND_DISPLAY=wayland-1" ];
-  #  };
-  #  wantedBy = [ "graphical-session.target" ];
-  #};
   security.pam.services.swaylock = { allowNullPassword = true; }; # Enable PAM for Swaylock
   hardware.opengl = {
     enable = true; # Enable OpenGL support
@@ -94,6 +73,6 @@ in
   };
   xdg.portal = {
     enable = true; # Enable xdg desktop integration
-    extraPortals = with pkgs; [ xdg-desktop-portal-wlr xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland xdg-desktop-portal-gtk ];
   };
 }
