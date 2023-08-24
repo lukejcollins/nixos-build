@@ -49,7 +49,7 @@
         blur {
             enabled = true              # Enable blur
             size = 3                    # Blur size
-            passes = 1                  # Blur passes
+            passes = 2                  # Blur passes
         }
         drop_shadow = true              # Enable drop shadow
         shadow_range = 4                # Shadow range
@@ -149,6 +149,9 @@
     bind = $mainMod SHIFT, 8, movetoworkspace, 8
     bind = $mainMod SHIFT, 9, movetoworkspace, 9
     bind = $mainMod SHIFT, 0, movetoworkspace, 10
+
+    # Layer rules
+    layerrule = blur, waybar
   '';
 }
 
