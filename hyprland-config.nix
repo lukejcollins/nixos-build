@@ -38,6 +38,11 @@
         layout = hy3                    # Layout type
     }
 
+    # Misc Configuration
+    misc {
+        disable_hyprland_logo = true    # Disable hyprland logo
+    }
+
     # Decoration Configuration
     decoration {
         rounding = 10                   # Rounding factor
