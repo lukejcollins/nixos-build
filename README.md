@@ -1,4 +1,4 @@
-[![NixOS](https://img.shields.io/badge/NixOS-unstable-blue.svg?logo=nixos)](https://nixos.org/) [![Sway](https://img.shields.io/badge/Sway-customised-blue.svg?logo=gumtree)](https://swaywm.org/)
+[![NixOS](https://img.shields.io/badge/NixOS-unstable-blue.svg?logo=nixos)](https://nixos.org/) [![Hyprland](https://img.shields.io/badge/Hyprland-customised-blue.svg?logo=Drupal)](https://hyprland.org/)
 
 # Sway NixOS Configuration
 
