@@ -115,6 +115,12 @@
     bind = $mainMod, up, hy3:movefocus, u
     bind = $mainMod, down, hy3:movefocus, d
 
+    # Move window with mainMod + SHIFT + arrow keys
+    bind = $mainMod SHIFT, left, hy3:movewindow, l
+    bind = $mainMod SHIFT, right, hy3:movewindow, r
+    bind = $mainMod SHIFT, up, hy3:movewindow, u
+    bind = $mainMod SHIFT, down, hy3:movewindow, d
+
     # Switch workspaces with mainMod + [0-9]
     bind = $mainMod, 1, workspace, 1
     bind = $mainMod, 2, workspace, 2
