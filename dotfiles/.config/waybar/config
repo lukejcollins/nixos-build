@@ -14,12 +14,12 @@
     "layer": "top",
     "position": "top",
     "height": 30,
-    "margin-top": 5,
-    "margin-left": 5,
-    "margin-right": 5,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
 
     // Module positions
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["wlr/workspaces", "wlr/mode"],
     "modules-center": [],
     "modules-right": ["network", "battery", "clock#date", "clock#time"],
 
@@ -82,28 +82,24 @@
         "tooltip-format": "{ifname}: {ipaddr}"
     },
 
-    "sway/mode": {
+    "wlr/mode": {
         "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
         "tooltip": false
     },
 
-    "sway/window": {
+    "hyprland/window": {
         "format": "{}",
         "max-length": 120
     },
 
-    "sway/workspaces": {
-        "all-outputs": false,
+    "wlr/workspaces": {
+        "all-outputs": true,
         "disable-scroll": true,
+	"on-click": "activate",
         "format": "{icon} {name}",
         "format-icons": {
-            "1:www": "龜", // Icon: firefox-browser
-            "2:mail": "", // Icon: mail
-            "3:editor": "", // Icon: code
-            "4:terminals": "", // Icon: terminal
-            "5:portal": "", // Icon: terminal
             "urgent": "",
-            "focused": "",
+            "active": "",
             "default": ""
         }
     },

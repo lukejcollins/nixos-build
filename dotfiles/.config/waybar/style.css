@@ -41,6 +41,7 @@
     color: #C4CBD4;
     font-family: Cantarell, Noto Sans, sans-serif, "Font Awesome 5 Free";
     font-size: 13px;
+    border-radius: 10px;
 }
 
 /* Common padding for each module */
@@ -142,13 +143,18 @@
 }
 
 /* Workspaces styling */
+#workspaces button:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 #workspaces button {
     color: #586875;
     background-color: #404155;
     padding: 2px 10px 2px 10px;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     color: #F9F9F9;
     background-color: #4084D6;
 }

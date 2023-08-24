@@ -123,12 +123,11 @@ in
     ".config/nvim/init.vim".source = ./dotfiles/.config/nvim/init.vim;
     ".config/waybar/style.css".source = ./dotfiles/.config/waybar/style.css;
     ".config/waybar/config".source = ./dotfiles/.config/waybar/config;
-    ".config/sway/config".source = ./dotfiles/.config/sway/config;
     ".config/alacritty/alacritty.yml".source = ./dotfiles/.config/alacritty/alacritty.yml;
     ".config/swappy/config".source = ./dotfiles/.config/swappy/config;
+    ".config/hypr/hyprpaper.conf".source = ./dotfiles/.config/hypr/hyprpaper.conf;
     ".zshrc".source = ./dotfiles/.zshrc;
     ".p10k.zsh".source = ./dotfiles/.p10k.zsh;
-    ".local/bin/sway_split_direction.sh".source = ./dotfiles/.local/bin/sway_split_direction.sh;
     ".local/bin/set-dark-theme.sh".source = ./dotfiles/.local/bin/set-dark-theme.sh;
     ".local/bin/lid-close.sh".source = ./dotfiles/.local/bin/lid-close.sh;
     ".local/share/applications/shutdown.desktop".source = ./dotfiles/.local/share/applications/shutdown.desktop;

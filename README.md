@@ -2,11 +2,11 @@
 
 # Sway NixOS Configuration
 
-This repository contains a Nix flake to set up Sway with a custom configuration on NixOS.
+This repository contains a Nix flake to set up Hyprland with a custom configuration on NixOS.
 
 ## Description
 
-A custom tailored NixOS configuration targeting the Sway window manager, complemented with a range of packages to offer a robust and efficient environment.
+A custom tailored NixOS configuration targeting the Hyprland window manager, complemented with a range of packages to offer a robust and efficient environment.
 
 ## Prerequisites
 
@@ -41,6 +41,7 @@ Once the flake has been built, you can run further builds from the flake repo wi
 - `configuration.nix`: NixOS system configuration.
 - `home.nix`: Contains configurations for the user's environment, including home-manager packages and shell setup.
 - `user-config.nix`: User and home path details
+= `hyprland-config.nix`: Config for the Hyprland window manager
 - `dotfiles/`: Contains various dotfiles that can be linked or copied to user's home.
 
 ## Dependencies
