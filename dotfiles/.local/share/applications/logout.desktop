@@ -1,4 +1,4 @@
 [Desktop Entry]
 Name=Logout
-Exec=swaymsg exit
+Exec=hyprctl dispatch exit
 Type=Application
