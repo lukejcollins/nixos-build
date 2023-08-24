@@ -41,6 +41,7 @@
     # Misc Configuration
     misc {
         disable_hyprland_logo = true    # Disable hyprland logo
+        disable_splash_rendering = true # Disable splash rendering
     }
 
     # Decoration Configuration
