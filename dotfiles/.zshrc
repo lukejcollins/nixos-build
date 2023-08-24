@@ -57,6 +57,6 @@ alias nixos-clean='sudo nix-env --delete-generations old -p /nix/var/nix/profile
 # ===============
 
 # Auto-launch Sway
-if [ "$(tty)" = "/dev/tty1" ]; then
-    exec sway
-fi
+#if [ "$(tty)" = "/dev/tty1" ]; then
+#    exec sway
+#fi

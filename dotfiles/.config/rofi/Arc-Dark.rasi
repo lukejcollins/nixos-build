@@ -36,7 +36,7 @@
 }
 window {
     background-color: @background;
-    border:           1;
+    border:           0;
     padding:          5;
 }
 mainbox {
@@ -44,7 +44,7 @@ mainbox {
     padding: 0;
 }
 message {
-    border:       2px 0px 0px ;
+    border:       0px 0px 0px ;
     border-color: @separatorcolor;
     padding:      1px ;
 }
@@ -53,7 +53,7 @@ textbox {
 }
 listview {
     fixed-height: 0;
-    border:       2px 0px 0px ;
+    border:       0px 0px 0px ;
     border-color: @separatorcolor;
     spacing:      2px ;
     scrollbar:    true;
@@ -111,7 +111,7 @@ scrollbar {
     padding:      0;
 }
 mode-switcher {
-    border:       2px 0px 0px ;
+    border:       0px 0px 0px ;
     border-color: @separatorcolor;
 }
 button {

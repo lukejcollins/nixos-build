@@ -29,12 +29,18 @@ in
   # Software and Package Configurations
   programs.zsh.enable = true; # Enable ZSH for the system
   environment.systemPackages = with pkgs; [ # List of packages to be globally installed
-    alacritty neovim swayfx firefox-wayland wget docker wob libfido2 gh swappy swaylock-effects
-    nodejs python3 python3Packages.pip shellcheck wdisplays git waybar blueman brightnessctl
+    alacritty neovim firefox-wayland wget docker wob libfido2 gh swappy swaylock-effects
+    nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez dconf tidal-hifi vscode gnome.gnome-boxes 
     shfmt mako slurp wl-clipboard unzip statix nixpkgs-fmt neofetch rofi
   ];
   virtualisation.docker.enable = true; # Enable Docker
+  programs.waybar = {
+    enable = true;
+    package = pkgs.waybar.overrideAttrs (oldAttrs: {
+     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    });
+  };
 
   # Sound and Media Configurations
   sound.enable = true; # Enable sound support

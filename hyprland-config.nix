@@ -1,62 +1,57 @@
 # hyprland-config.nix
 { config, pkgs, ... }: {
   wayland.windowManager.hyprland.extraConfig = ''
-    # This is an example Hyprland config file.
-    #
-    # Refer to the wiki for more information.
+    # Configure monitor
+    monitor=,highres,auto,1
 
-    #
-    # Please note not all available settings / options are set here.
-    # For a full list, see the wiki
-    #
+    # Launch Waybar
+    exec-once = waybar
 
-    # See https://wiki.hyprland.org/Configuring/Monitors/
-    monitor=,preferred,auto,auto
+    # Change GTK to dark theme
+    exec-once = ~/.local/bin/set-dark-theme.sh
 
+    # Execute lid close script
+    exec-once = ~/.local/bin/lid-close.sh
 
-    # See https://wiki.hyprland.org/Configuring/Keywords/ for more
+    # Initialise wob
+    exec-once = rm -f $XDG_RUNTIME_DIR/wob.sock && mkfifo $XDG_RUNTIME_DIR/wob.sock && tail -f $XDG_RUNTIME_DIR/wob.sock | wob
 
-    # Execute your favorite apps at launch
-    # exec-once = waybar & hyprpaper & firefox
+    # Launch blueman
+    exec-once = blueman-applet
 
-    # Source a file (multi-file configs)
-    # source = ~/.config/hypr/myColors.conf
+    # Start hyprpaper
+    exec-once = hyprpaper 
 
-    # Some default env vars.
+    # Ensure that the environment variables are correctly set for the user systemd units
+    exec-once = systemctl --user import-environment
+    
+    # Cursor size
     env = XCURSOR_SIZE,24
 
-    # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
+    # Input config
     input {
         kb_layout = us
-        kb_variant =
-        kb_model =
-        kb_options =
-        kb_rules =
 
-        follow_mouse = 1
+        follow_mouse = 0
 
         touchpad {
             natural_scroll = false
+            clickfinger_behavior = 1
         }
 
-        sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
     }
 
     general {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more
-
         gaps_in = 5
-        gaps_out = 20
+        gaps_out = 10
         border_size = 2
-        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+        col.active_border = rgba(5289E2ee) rgba(6897BBee) 45deg
         col.inactive_border = rgba(595959aa)
 
-        layout = dwindle
+        layout = hy3
     }
 
     decoration {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more
-
         rounding = 10
 
         blur {
@@ -74,8 +69,6 @@
     animations {
         enabled = true
 
-        # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
-
         bezier = myBezier, 0.05, 0.9, 0.1, 1.05
 
         animation = windows, 1, 7, myBezier
@@ -86,53 +79,48 @@
         animation = workspaces, 1, 6, default
     }
 
-    dwindle {
-        # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-        pseudotile = true # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-        preserve_split = true # you probably want this
-    }
-
     master {
-        # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
         new_is_master = true
     }
 
     gestures {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more
         workspace_swipe = false
     }
 
-    # Example per-device config
-    # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
     device:epic-mouse-v1 {
         sensitivity = -0.5
     }
 
-    # Example windowrule v1
-    # windowrule = float, ^(kitty)$
-    # Example windowrule v2
-    # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-    # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-
-
-    # See https://wiki.hyprland.org/Configuring/Keywords/ for more
     $mainMod = SUPER
 
-    # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-    bind = $mainMod, Q, exec, kitty
-    bind = $mainMod, C, killactive,
-    bind = $mainMod, M, exit,
+    bind = $mainMod_SHIFT, C, exec, hyprctl reload
+
+    bind = $mainMod, RETURN, exec, alacritty
+    bind = $mainMod_SHIFT, Q, killactive,
+    bind = $mainMod_SHIFT, E, exit,
     bind = $mainMod, E, exec, dolphin
     bind = $mainMod, V, togglefloating,
-    bind = $mainMod, R, exec, wofi --show drun
-    bind = $mainMod, P, pseudo, # dwindle
-    bind = $mainMod, J, togglesplit, # dwindle
+    bind = $mainMod, SPACE, exec, rofi -show drun
+    bind = $mainMod, S, exec, pavucontrol
+    bind = $mainMod, W, exec, alacritty -e sh -c 'sleep 0.1; nmtui'
+    bind = $mainMod, D, exec, wdisplays
+    bind = $mainMod, B, exec, blueman-manager
+    bind = , XF86AudioRaiseVolume, exec, amixer sset Master unmute; exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $XDG_RUNTIME_DIR/wob.sock
+    bind = , XF86AudioLowerVolume, exec, amixer sset Master unmute; exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $XDG_RUNTIME_DIR/wob.sock
+    bind = , XF86AudioMute, exec, amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $XDG_RUNTIME_DIR/wob.sock
+    bind = , XF86MonBrightnessUp, exec, brightnessctl set +10%
+    bind = , XF86MonBrightnessDown, exec, brightnessctl set 10%- -n 1%
+    bind = $mainMod, ESCAPE, exec, swaylock --clock --screenshots --effect-pixelate 5
+    bind = $mainMod, P, exec, grim -g "$(slurp)" - | swappy -f -
 
     # Move focus with mainMod + arrow keys
-    bind = $mainMod, left, movefocus, l
-    bind = $mainMod, right, movefocus, r
-    bind = $mainMod, up, movefocus, u
-    bind = $mainMod, down, movefocus, d
+    bind = $mainMod, left, hy3:movefocus, l
+    bind = $mainMod, right, hy3:movefocus, r
+    bind = $mainMod, up, hy3:movefocus, u
+    bind = $mainMod, down, hy3:movefocus, d
+
+    # Toggle split
+    bind = $mainMod, BACKSPACE, hy3:makegroup, opposite, ephemeral
 
     # Switch workspaces with mainMod + [0-9]
     bind = $mainMod, 1, workspace, 1
@@ -163,7 +151,7 @@
     bind = $mainMod, mouse_up, workspace, e-1
 
     # Move/resize windows with mainMod + LMB/RMB and dragging
-    bindm = $mainMod, mouse:272, movewindow
+    bindm = $mainMod, mouse:272, hy3:movewindow
     bindm = $mainMod, mouse:273, resizewindow
   '';
 }
