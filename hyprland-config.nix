@@ -8,7 +8,6 @@
     env = XCURSOR_SIZE,24
 
     # Executions on Startup
-    exec-once = waybar                   # Launch Waybar
     exec-once = ~/.local/bin/set-dark-theme.sh # Change GTK to dark theme
     exec-once = ~/.local/bin/lid-close.sh      # Execute lid close script
     exec-once = rm -f $XDG_RUNTIME_DIR/wob.sock && mkfifo $XDG_RUNTIME_DIR/wob.sock && tail -f $XDG_RUNTIME_DIR/wob.sock | wob # Initialise wob
@@ -36,6 +35,7 @@
         col.active_border = rgba(5289E2ee) rgba(6897BBee) 45deg # Active border color
         col.inactive_border = rgba(595959aa) # Inactive border color
         layout = hy3                    # Layout type
+        no_cursor_warps = 0             # Disable cursor warps
     }
 
     # Misc Configuration
@@ -94,6 +94,7 @@
     bind = $mainMod, ESCAPE, exec, swaylock --clock --screenshots --effect-pixelate 5 # Lock screen
     bind = $mainMod, BACKSPACE, hy3:makegroup, opposite, ephemeral # Toggle split
     bind = $mainMod_SHIFT, E, exit                 # Exit system
+    bind = $mainMod, Q, exec, ~/.local/bin/list-workspaces.sh # List workspaces
 
     # Application Bindings
     bind = $mainMod, RETURN, exec, alacritty       # Open terminal
@@ -152,7 +153,8 @@
     bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
     # Layer rules
-    layerrule = blur, waybar
+    layerrule = blur, notifications
+    layerrule = ignorezero, notifications
   '';
 }
 

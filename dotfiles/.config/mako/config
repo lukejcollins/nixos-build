@@ -1,0 +1,14 @@
+background-color=#2f343fe6
+text-color=#d3dae3
+border-color=#2f343f
+border-radius=10
+
+[urgency=low]
+border-color=#2f343f
+
+[urgency=normal]
+border-color=#5e81ac
+
+[urgency=high]
+border-color=#bf616a
+

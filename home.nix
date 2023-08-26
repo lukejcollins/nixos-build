@@ -121,15 +121,15 @@ in
     ".config/rofi/config.rasi".source = ./dotfiles/.config/rofi/config.rasi;
     ".config/rofi/Arc-Dark.rasi".source = ./dotfiles/.config/rofi/Arc-Dark.rasi;
     ".config/nvim/init.vim".source = ./dotfiles/.config/nvim/init.vim;
-    ".config/waybar/style.css".source = ./dotfiles/.config/waybar/style.css;
-    ".config/waybar/config".source = ./dotfiles/.config/waybar/config;
     ".config/alacritty/alacritty.yml".source = ./dotfiles/.config/alacritty/alacritty.yml;
     ".config/swappy/config".source = ./dotfiles/.config/swappy/config;
     ".config/hypr/hyprpaper.conf".source = ./dotfiles/.config/hypr/hyprpaper.conf;
+    ".config/mako/config".source = ./dotfiles/.config/mako/config;
     ".zshrc".source = ./dotfiles/.zshrc;
     ".p10k.zsh".source = ./dotfiles/.p10k.zsh;
     ".local/bin/set-dark-theme.sh".source = ./dotfiles/.local/bin/set-dark-theme.sh;
     ".local/bin/lid-close.sh".source = ./dotfiles/.local/bin/lid-close.sh;
+    ".local/bin/list-workspaces.sh".source = ./dotfiles/.local/bin/list-workspaces.sh;
     ".local/share/applications/shutdown.desktop".source = ./dotfiles/.local/share/applications/shutdown.desktop;
     ".local/share/applications/reboot.desktop".source = ./dotfiles/.local/share/applications/reboot.desktop;
     ".local/share/applications/logout.desktop".source = ./dotfiles/.local/share/applications/logout.desktop;
