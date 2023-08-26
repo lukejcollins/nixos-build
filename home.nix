@@ -127,7 +127,6 @@ in
     ".config/mako/config".source = ./dotfiles/.config/mako/config;
     ".zshrc".source = ./dotfiles/.zshrc;
     ".p10k.zsh".source = ./dotfiles/.p10k.zsh;
-    ".local/bin/set-dark-theme.sh".source = ./dotfiles/.local/bin/set-dark-theme.sh;
     ".local/bin/lid-close.sh".source = ./dotfiles/.local/bin/lid-close.sh;
     ".local/bin/list-workspaces.sh".source = ./dotfiles/.local/bin/list-workspaces.sh;
     ".local/share/applications/shutdown.desktop".source = ./dotfiles/.local/share/applications/shutdown.desktop;
