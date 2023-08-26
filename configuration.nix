@@ -35,7 +35,6 @@ in
     shfmt mako slurp wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify
   ];
   virtualisation.docker.enable = true; # Enable Docker
-  environment.variables.WLR_NO_HARDWARE_CURSORS = "1"; # Enable software cursors
 
   # Sound and Media Configurations
   sound.enable = true; # Enable sound support
