@@ -1,7 +1,7 @@
 # Alacritty configuration file
 
 window:
-  opacity: 0.90
+  opacity: 0.60
 
 colors:
   # Default colors

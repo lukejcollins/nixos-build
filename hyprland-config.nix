@@ -155,6 +155,7 @@
     # Layer rules
     layerrule = blur, notifications
     layerrule = ignorezero, notifications
+    layerrule = blur, rofi
   '';
 }
 
