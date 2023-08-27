@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland.extraConfig = ''
     # Monitor Configuration
     monitor=eDP-1,1920x1200,auto,1
-    monitor=DP-2,3840x2160,auto,1
+    monitor=,highres,auto,1
 
     # Environment Variables
     env = XCURSOR_SIZE,24

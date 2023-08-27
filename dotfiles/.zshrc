@@ -29,13 +29,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git)
 
-# =================
-# Environment Configuration
-# =================
-
-# GTK theme
-export GTK_THEME=Adwaita:dark
-
 # ===============
 # Aliases
 # ===============

@@ -109,11 +109,19 @@ in
     "org/blueman/general/auto-power-on" = { value = true; };
   };
 
+  # GTK theme and dark mode preferences
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Arc-Dark";
+      package = pkgs.arc-theme;
+    };
+  };
+
   # Session Variables
   home.sessionVariables = {
     PATH = with pkgs; "${myPythonEnv}/bin:$PATH";
     MOZ_ENABLE_WAYLAND = 1;
-    XDG_CURRENT_DESKTOP = "sway";
   };
 
   # Home File Definitions

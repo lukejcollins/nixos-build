@@ -31,10 +31,11 @@ in
   environment.systemPackages = with pkgs; [ # List of packages to be globally installed
     alacritty neovim firefox-wayland wget docker wob libfido2 gh swappy swaylock-effects
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
-    home-manager pavucontrol alsa-utils grim bluez dconf tidal-hifi vscode gnome.gnome-boxes 
-    shfmt mako slurp wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify
+    home-manager pavucontrol alsa-utils grim bluez vscode gnome.gnome-boxes shfmt mako slurp 
+    wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify
   ];
   virtualisation.docker.enable = true; # Enable Docker
+  programs.dconf.enable = true; # Enable DConf for configuration management
 
   # Sound and Media Configurations
   sound.enable = true; # Enable sound support
@@ -72,6 +73,6 @@ in
   };
   xdg.portal = {
     enable = true; # Enable xdg desktop integration
-    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
   };
 }
