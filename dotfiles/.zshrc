@@ -40,10 +40,10 @@ alias vim='nvim'
 alias flake-build='sudo nixos-rebuild switch --flake "$(pwd)#mySystem" && home-manager switch --flake "$(pwd)#myUser" --extra-experimental-features nix-command --extra-experimental-features flakes'
 
 # Flake update
-alias flake-update='sudo nix flake update --extra-experimental-features nix-command --extra-experimental-features flakes'
+alias flake-update='sudo nix flake update --extra-experimental-features nix-command --extra-experimental-features flakes && flake-build'
 
 # NixOS clean
-alias nixos-clean='sudo nix-env --delete-generations old -p /nix/var/nix/profiles/system && sudo nix-collect-garbage -d'
+alias nixos-clean='sudo nix-env --delete-generations old -p /nix/var/nix/profiles/system && sudo nix-collect-garbage -d && flake-build'
 
 # ===============
 # Miscellaneous Configurations

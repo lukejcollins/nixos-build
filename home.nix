@@ -91,7 +91,7 @@ in
   # Package Installation
   home.packages = with pkgs; [
     fontconfig font-awesome_5 cantarell-fonts noto-fonts
-    myPythonEnv tflint hadolint
+    myPythonEnv tflint hadolint noto-fonts-emoji
   ];
 
   # ZSH Configuration
