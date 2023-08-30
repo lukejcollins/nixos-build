@@ -158,6 +158,10 @@
     layerrule = blur, notifications
     layerrule = ignorezero, notifications
     layerrule = blur, rofi
+
+    # Window rules
+    windowrulev2 = opacity 0.8 0.8,title:^(Volume Control)$
+    windowrulev2 = opacity 0.8 0.8,title:^(Bluetooth Devices)$
+    windowrulev2 = opacity 0.8 0.8,title:^(wdisplays)$
   '';
 }
-
