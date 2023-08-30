@@ -2,15 +2,13 @@
 { config, pkgs, ... }: {
   wayland.windowManager.hyprland.extraConfig = ''
     # Monitor Configuration
-    monitor=eDP-1,1920x1200,auto,1
-    monitor=,highres,auto,1
+    monitor=eDP-1,1920x1200,0x0,1
+    monitor=,3840x2160,1920x0,1
 
     # Environment Variables
     env = XCURSOR_SIZE,24
 
     # Executions on Startup
-    exec-once = ~/.local/bin/set-dark-theme.sh # Change GTK to dark theme
-    exec-once = ~/.local/bin/lid-close.sh      # Execute lid close script
     exec-once = rm -f $XDG_RUNTIME_DIR/wob.sock && mkfifo $XDG_RUNTIME_DIR/wob.sock && tail -f $XDG_RUNTIME_DIR/wob.sock | wob # Initialise wob
     exec-once = blueman-applet           # Launch blueman
     exec-once = hyprpaper                # Start hyprpaper
@@ -152,6 +150,9 @@
     bind = $mainMod SHIFT, 8, movetoworkspace, 8
     bind = $mainMod SHIFT, 9, movetoworkspace, 9
     bind = $mainMod SHIFT, 0, movetoworkspace, 10
+
+    # Lid switch event
+    bindl=,switch:Lid Switch,exec,swaylock --clock --screenshots --effect-pixelate 5 
 
     # Layer rules
     layerrule = blur, notifications

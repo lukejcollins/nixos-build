@@ -121,7 +121,6 @@ in
   # Session Variables
   home.sessionVariables = {
     PATH = with pkgs; "${myPythonEnv}/bin:$PATH";
-    MOZ_ENABLE_WAYLAND = 1;
   };
 
   # Home File Definitions
@@ -135,7 +134,6 @@ in
     ".config/mako/config".source = ./dotfiles/.config/mako/config;
     ".zshrc".source = ./dotfiles/.zshrc;
     ".p10k.zsh".source = ./dotfiles/.p10k.zsh;
-    ".local/bin/lid-close.sh".source = ./dotfiles/.local/bin/lid-close.sh;
     ".local/bin/list-workspaces.sh".source = ./dotfiles/.local/bin/list-workspaces.sh;
     ".local/share/applications/shutdown.desktop".source = ./dotfiles/.local/share/applications/shutdown.desktop;
     ".local/share/applications/reboot.desktop".source = ./dotfiles/.local/share/applications/reboot.desktop;

@@ -30,15 +30,22 @@ done < <(hyprctl workspaces | grep 'workspace ID')
 battery_capacity=$(cat /sys/class/power_supply/BAT0/capacity)
 battery_status=$(cat /sys/class/power_supply/BAT0/status)
 
-# Only send the notification for DP-2 if it's plugged in (i.e., workspaces_DP2 is not empty)
+# Aggregate the notifications
+notification_text=" $workspaces_eDP1\n"
+
 if [[ -n "$workspaces_DP2" ]]; then
-  notify-send -t 2000 "Workspaces on DP-2" "$workspaces_DP2"
+  notification_text+=" $workspaces_DP2\n"
 fi
 
-# Create and send notifications for workspaces
-notify-send -t 2000 "Workspaces on eDP-1" "$workspaces_eDP1"
-
-# Send battery notification
+# Add battery information
 battery_notification=$(printf "%s%% (%s)" "$battery_capacity" "$battery_status")
-notify-send -t 2000 "Battery" "$battery_notification"
+notification_text+=" $battery_notification"
 
+# Get the current time
+current_time=$(date '+%H:%M:%S')
+
+# Get the current date in the desired format
+current_date=$(date '+%Y-%m-%d')
+
+# Send the consolidated notification with time
+notify-send -t 4000 "Status @ $current_time on $current_date" "$notification_text"
