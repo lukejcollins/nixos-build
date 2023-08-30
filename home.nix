@@ -96,7 +96,6 @@ in
 
   # ZSH Configuration
   programs.zsh = {
-    enable = true;
     shellAliases = { vim = "nvim"; };
   };
 
