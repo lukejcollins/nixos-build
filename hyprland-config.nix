@@ -5,9 +5,6 @@
     monitor=eDP-1,1920x1200,0x0,1
     monitor=,3840x2160,1920x0,1
 
-    # Environment Variables
-    env = XCURSOR_SIZE,24
-
     # Executions on Startup
     exec-once = rm -f $XDG_RUNTIME_DIR/wob.sock && mkfifo $XDG_RUNTIME_DIR/wob.sock && tail -f $XDG_RUNTIME_DIR/wob.sock | wob # Initialise wob
     exec-once = blueman-applet           # Launch blueman
@@ -158,6 +155,7 @@
     layerrule = blur, notifications
     layerrule = ignorezero, notifications
     layerrule = blur, rofi
+    layerrule = ignorezero, rofi
 
     # Window rules
     windowrulev2 = opacity 0.8 0.8,title:^(Volume Control)$
