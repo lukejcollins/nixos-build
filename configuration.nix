@@ -10,7 +10,6 @@ in
   system.stateVersion = "23.05"; # System version specification
   nixpkgs.config.allowUnfree = true; # Enable non-free packages
   time.timeZone = "Europe/London"; # Set timezone
-  powerManagement.enable = false; # Disable power management
 
   # Hardware and Boot Configurations
   imports = [ ./hardware-configuration.nix ]; # Include hardware-specific configurations
@@ -19,6 +18,14 @@ in
   boot.kernelPackages = pkgs.linuxPackages_6_4; # Specify the Linux kernel package version
   hardware.enableAllFirmware = true;
   
+  # Disable all power management related services
+  systemd.targets = {
+    suspend = {};
+    hibernate = {};
+    hybrid-sleep = {};
+    sleep = {};
+  };
+
   # User Configurations
   users.users.${userConfig.username} = {
     isNormalUser = true;
