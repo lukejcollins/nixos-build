@@ -117,6 +117,15 @@ in
     };
   };
 
+  # Cursor Theme
+  home.pointerCursor = {
+    package = pkgs.gnome.adwaita-icon-theme;
+    name = "Adwaita";
+    size = 24;
+    x11.enable = true;
+    gtk.enable = true; 
+  };
+
   # Session Variables
   home.sessionVariables = {
     PATH = with pkgs; "${myPythonEnv}/bin:$PATH";

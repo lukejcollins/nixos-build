@@ -11,12 +11,12 @@
     exec-once = hyprpaper                # Start hyprpaper
     exec-once = systemctl --user import-environment # Ensure environment variables for user systemd units
     exec-once = mako                     # Launch mako
+    exec-once = hyprctl setcursor Adwaita 24 # Set cursor
 
 
     # Input Configuration
     input {
         kb_layout = us                  # Keyboard layout
-        follow_mouse = 0                # Follow mouse setting
         touchpad {
             natural_scroll = false      # Touchpad natural scroll
             clickfinger_behavior = 1    # Click finger behavior
@@ -31,7 +31,6 @@
         col.active_border = rgba(5289E2ee) rgba(6897BBee) 45deg # Active border color
         col.inactive_border = rgba(595959aa) # Inactive border color
         layout = hy3                    # Layout type
-        no_cursor_warps = 0             # Disable cursor warps
     }
 
     # Misc Configuration
