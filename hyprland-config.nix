@@ -26,8 +26,8 @@
 
     # General Configuration
     general {
-        gaps_in = 5                     # Inner gaps
-        gaps_out = 10                   # Outer gaps
+        gaps_in = 2.5                     # Inner gaps
+        gaps_out = 5                   # Outer gaps
         border_size = 2                 # Border size
         col.active_border = rgba(5289E2ee) rgba(6897BBee) 45deg # Active border color
         col.inactive_border = rgba(595959aa) # Inactive border color
@@ -157,6 +157,7 @@
     layerrule = blur, rofi
     layerrule = ignorezero, rofi
     layerrule = blur, waybar
+    layerrule = ignorezero, waybar
 
     # Window rules
     windowrulev2 = opacity 0.8 0.8,title:^(Volume Control)$

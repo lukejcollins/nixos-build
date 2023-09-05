@@ -1,6 +1,6 @@
 /* =============================================================================
  *
- * Waybar inspired by rofi theme
+ * Waybar inspired by arc dark
  *
  * =========================================================================== */
 
@@ -41,22 +41,10 @@
     color: #C4CBD4;
     font-family: Cantarell, Noto Sans, sans-serif, "Font Awesome 5 Free";
     font-size: 13px;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 /* Common padding for each module */
-#battery,
-#clock,
-#cpu,
-#custom-keyboard-layout,
-#memory,
-#mode,
-#network,
-#pulseaudio,
-#temperature,
-#tray {
-    padding: 0 10px;
-}
 
 /* Battery styling */
 #battery {
@@ -87,37 +75,6 @@
     padding: 0 5px;
 }
 
-/* CPU styling */
-#cpu.warning {
-    color: #DC322F;
-}
-
-#cpu.critical {
-    color: #CC6666;
-}
-
-/* Memory styling */
-#memory {
-    animation: linear infinite alternate;
-}
-
-#memory.warning {
-    color: #DC322F;
-}
-
-#memory.critical {
-    color: #CC6666;
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-/* Mode styling */
-#mode {
-    background: #4B5160;
-    border-top: 2px solid #7C8389;
-    padding-bottom: 2px;
-}
-
 /* Network styling */
 #network {
     padding-right: 3px;
@@ -127,25 +84,10 @@
     color: #DC322F;
 }
 
-/* Custom Spotify styling */
-#custom-spotify {
-    color: #268BD2;
-}
-
-/* Temperature styling */
-#temperature.critical {
-    color: #CC6666;
-}
-
-/* Window styling */
-#window {
-    font-weight: bold;
-}
-
 /* Workspaces styling */
 #workspaces button:first-child {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 
 #workspaces button {
