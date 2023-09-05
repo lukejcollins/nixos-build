@@ -51,6 +51,9 @@
           wayland.windowManager.hyprland = {
             enable = true;
             plugins = [ hy3.packages.x86_64-linux.hy3 ];
+            recommendedEnvironment = true;
+            systemdIntegration = true;
+            xwayland.enable = true;
           };
         }
       ];
