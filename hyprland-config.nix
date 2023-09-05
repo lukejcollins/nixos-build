@@ -157,7 +157,6 @@
     layerrule = blur, rofi
     layerrule = ignorezero, rofi
     layerrule = blur, waybar
-    layerrule = ignorezero, waybar
 
     # Window rules
     windowrulev2 = opacity 0.8 0.8,title:^(Volume Control)$
