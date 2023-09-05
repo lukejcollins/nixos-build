@@ -7,11 +7,12 @@
 
     # Executions on Startup
     exec-once = rm -f $XDG_RUNTIME_DIR/wob.sock && mkfifo $XDG_RUNTIME_DIR/wob.sock && tail -f $XDG_RUNTIME_DIR/wob.sock | wob # Initialise wob
-    exec-once = blueman-applet           # Launch blueman
-    exec-once = hyprpaper                # Start hyprpaper
+    exec-once = blueman-applet          # Launch blueman
+    exec-once = hyprpaper               # Start hyprpaper
     exec-once = systemctl --user import-environment # Ensure environment variables for user systemd units
-    exec-once = mako                     # Launch mako
+    exec-once = mako                    # Launch mako
     exec-once = hyprctl setcursor Adwaita 24 # Set cursor
+    exec-once = waybar                  # Launch waybar
 
 
     # Input Configuration
@@ -155,6 +156,8 @@
     layerrule = ignorezero, notifications
     layerrule = blur, rofi
     layerrule = ignorezero, rofi
+    layerrule = blur, waybar
+    layerrule = ignorezero, waybar
 
     # Window rules
     windowrulev2 = opacity 0.8 0.8,title:^(Volume Control)$

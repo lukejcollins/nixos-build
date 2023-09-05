@@ -140,6 +140,8 @@ in
     ".config/swappy/config".source = ./dotfiles/.config/swappy/config;
     ".config/hypr/hyprpaper.conf".source = ./dotfiles/.config/hypr/hyprpaper.conf;
     ".config/mako/config".source = ./dotfiles/.config/mako/config;
+    ".config/waybar/config".source = ./dotfiles/.config/waybar/config;
+    ".config/waybar/style.css".source = ./dotfiles/.config/waybar/style.css;
     ".zshrc".source = ./dotfiles/.zshrc;
     ".p10k.zsh".source = ./dotfiles/.p10k.zsh;
     ".local/bin/list-workspaces.sh".source = ./dotfiles/.local/bin/list-workspaces.sh;

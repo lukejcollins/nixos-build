@@ -1,0 +1,165 @@
+/* =============================================================================
+ *
+ * Waybar inspired by rofi theme
+ *
+ * =========================================================================== */
+
+/* Keyframe for warning blinks */
+@keyframes blink-warning {
+    70% {
+        color: #FFFFFF;
+    }
+    100% {
+        color: #FFFFFF;
+        background-color: #FFA500;
+    }
+}
+
+/* Keyframe for critical blinks */
+@keyframes blink-critical {
+    70% {
+        color: #FFFFFF;
+    }
+    100% {
+        color: #FFFFFF;
+        background-color: #FF0000;
+    }
+}
+
+/* Resetting common styles for all elements */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling the entire bar */
+#waybar {
+    background: rgba(45, 48, 59, 0.8);
+    color: #C4CBD4;
+    font-family: Cantarell, Noto Sans, sans-serif, "Font Awesome 5 Free";
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+/* Common padding for each module */
+#battery,
+#clock,
+#cpu,
+#custom-keyboard-layout,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#tray {
+    padding: 0 10px;
+}
+
+/* Battery styling */
+#battery {
+    animation: linear infinite alternate;
+    padding-right: 5px;
+}
+
+#battery.warning {
+    color: #DC322F;
+}
+
+#battery.critical {
+    color: #CC6666;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+/* Clock styling */
+#clock {
+    padding: 0 5px;
+}
+
+/* CPU styling */
+#cpu.warning {
+    color: #DC322F;
+}
+
+#cpu.critical {
+    color: #CC6666;
+}
+
+/* Memory styling */
+#memory {
+    animation: linear infinite alternate;
+}
+
+#memory.warning {
+    color: #DC322F;
+}
+
+#memory.critical {
+    color: #CC6666;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+/* Mode styling */
+#mode {
+    background: #4B5160;
+    border-top: 2px solid #7C8389;
+    padding-bottom: 2px;
+}
+
+/* Network styling */
+#network {
+    padding-right: 3px;
+}
+
+#network.disconnected {
+    color: #DC322F;
+}
+
+/* Custom Spotify styling */
+#custom-spotify {
+    color: #268BD2;
+}
+
+/* Temperature styling */
+#temperature.critical {
+    color: #CC6666;
+}
+
+/* Window styling */
+#window {
+    font-weight: bold;
+}
+
+/* Workspaces styling */
+#workspaces button:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#workspaces button {
+    color: #586875;
+    background-color: #404155;
+    padding: 2px 10px 2px 10px;
+}
+
+#workspaces button.active {
+    color: #F9F9F9;
+    background-color: #4084D6;
+}
+
+#workspaces button.urgent {
+    color: #F9F9F9;
+    background-color: #A54242;
+}
