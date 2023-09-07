@@ -144,7 +144,6 @@ in
     ".config/waybar/style.css".source = ./dotfiles/.config/waybar/style.css;
     ".zshrc".source = ./dotfiles/.zshrc;
     ".p10k.zsh".source = ./dotfiles/.p10k.zsh;
-    ".local/bin/list-workspaces.sh".source = ./dotfiles/.local/bin/list-workspaces.sh;
     ".local/share/applications/shutdown.desktop".source = ./dotfiles/.local/share/applications/shutdown.desktop;
     ".local/share/applications/reboot.desktop".source = ./dotfiles/.local/share/applications/reboot.desktop;
     ".local/share/applications/logout.desktop".source = ./dotfiles/.local/share/applications/logout.desktop;

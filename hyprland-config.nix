@@ -22,6 +22,8 @@
             natural_scroll = false      # Touchpad natural scroll
             clickfinger_behavior = 1    # Click finger behavior
         }
+        follow_mouse = 0                # Disable focus change on hover
+        float_switch_override_focus = 0 # Disable focus change on float  
     }
 
     # General Configuration
@@ -38,6 +40,7 @@
     misc {
         disable_hyprland_logo = true    # Disable hyprland logo
         disable_splash_rendering = true # Disable splash rendering
+        mouse_move_focuses_monitor = false # Disable move monitor focus with mouse
     }
 
     # Decoration Configuration
@@ -90,7 +93,6 @@
     bind = $mainMod, ESCAPE, exec, swaylock --clock --screenshots --effect-pixelate 5 # Lock screen
     bind = $mainMod, BACKSPACE, hy3:makegroup, opposite, ephemeral # Toggle split
     bind = $mainMod_SHIFT, E, exit                 # Exit system
-    bind = $mainMod, Q, exec, ~/.local/bin/list-workspaces.sh # List workspaces
 
     # Application Bindings
     bind = $mainMod, RETURN, exec, alacritty       # Open terminal
@@ -158,6 +160,10 @@
     layerrule = ignorezero, rofi
     layerrule = blur, waybar
     layerrule = ignorezero, waybar
+
+    # Resize window & move floating window
+    bindm = $mainMod, mouse:272, resizewindow
+    bindm = CTRL, mouse:273, movewindow
 
     # Window rules
     windowrulev2 = opacity 0.8 0.8,title:^(Volume Control)$
