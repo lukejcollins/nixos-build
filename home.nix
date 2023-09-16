@@ -122,8 +122,13 @@ in
     package = pkgs.gnome.adwaita-icon-theme;
     name = "Adwaita";
     size = 24;
-    x11.enable = true;
-    gtk.enable = true; 
+    x11 = {
+      enable = true;
+      defaultCursor = "Adwaita";
+    };
+    gtk = {
+      enable = true;
+    };
   };
 
   # Session Variables

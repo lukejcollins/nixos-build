@@ -13,10 +13,13 @@ in
 
   # Hardware and Boot Configurations
   imports = [ ./hardware-configuration.nix ]; # Include hardware-specific configurations
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_6_4; # Specify the Linux kernel package version
-  hardware.enableAllFirmware = true;
+  boot = {
+    loader = { 
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = pkgs.linuxPackages_6_4; # Specify the Linux kernel package version
+  };
   
   # Disable all power management related services
   systemd.targets = {
@@ -39,8 +42,7 @@ in
     alacritty neovim google-chrome wget docker wob libfido2 gh swappy swaylock-effects
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez vscode gnome.gnome-boxes shfmt mako slurp 
-    wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar youtube-music
-    insomnia
+    wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar
   ];
   virtualisation.docker.enable = true; # Enable Docker
   programs.dconf.enable = true; # Enable DConf for configuration management
@@ -49,36 +51,42 @@ in
   # Sound and Media Configurations
   sound.enable = true; # Enable sound support
   security.rtkit.enable = true; # Enable RTKit for low-latency audio
-  services.pipewire = { # Enable PipeWire for audio support
-    enable = true;
-    alsa = {
+  services = {
+    pipewire = { # Enable PipeWire for audio support
       enable = true;
-      support32Bit = true; # If you want to enable 32 bit application support
+      alsa = {
+        enable = true;
+        support32Bit = true; # If you want to enable 32 bit application support
+      };
+      jack = {
+        enable = true; 
+      };
+      pulse.enable = true; # This enables the PulseAudio compatibility modules
     };
-    jack = {
-      enable = true; 
-    };
-    pulse.enable = true; # This enables the PulseAudio compatibility modules
+    blueman.enable = true; # Blueman service for managing Bluetooth
+    fwupd.enable = true; # Enable firmware update
   };
 
   # Network and Bluetooth Configurations
   networking.networkmanager.enable = true; # Enable NetworkManager for network management
-  hardware.bluetooth = {
-    enable = true;
-    package = pkgs.bluezFull; # Use the full Bluez package for Bluetooth support
-    powerOnBoot = true; # Power on Bluetooth devices at boot
-    settings = {
-      General = {
-        Enable = "Source,Sink,Media,Socket";
+  hardware = {
+    bluetooth = {
+      enable = true;
+      package = pkgs.bluez; # Use the full Bluez package for Bluetooth support
+      powerOnBoot = true; # Power on Bluetooth devices at boot
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+        };
       };
     };
+    enableAllFirmware = true;
+    opengl = {
+      enable = true; # Enable OpenGL support
+      driSupport = true; # Enable Direct Rendering Infrastructure support
+    };
   };
-  services.blueman.enable = true; # Blueman service for managing Bluetooth
   security.pam.services.swaylock = { allowNullPassword = true; }; # Enable PAM for Swaylock
-  hardware.opengl = {
-    enable = true; # Enable OpenGL support
-    driSupport = true; # Enable Direct Rendering Infrastructure support
-  };
   xdg.portal = {
     enable = true; # Enable xdg desktop integration
     extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];

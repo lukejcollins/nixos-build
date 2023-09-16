@@ -2,8 +2,8 @@
 { config, pkgs, ... }: {
   wayland.windowManager.hyprland.extraConfig = ''
     # Monitor Configuration
-    monitor=eDP-1,1920x1200,0x0,1
-    monitor=,3840x2160,1920x0,1
+    monitor=,preferred,auto,1
+    #monitor=,3840x2160,1920x0,1
 
     # Executions on Startup
     exec-once = rm -f $XDG_RUNTIME_DIR/wob.sock && mkfifo $XDG_RUNTIME_DIR/wob.sock && tail -f $XDG_RUNTIME_DIR/wob.sock | wob # Initialise wob
@@ -14,6 +14,8 @@
     exec-once = hyprctl setcursor Adwaita 24 # Set cursor
     exec-once = waybar                  # Launch waybar
 
+    # Environmental Variables
+    env = WLR_NO_HARDWARE_CURSORS,1
 
     # Input Configuration
     input {
@@ -34,6 +36,7 @@
         col.active_border = rgba(5289E2ee) rgba(6897BBee) 45deg # Active border color
         col.inactive_border = rgba(595959aa) # Inactive border color
         layout = hy3                    # Layout type
+        no_cursor_warps = true          # No cursor warps
     }
 
     # Misc Configuration
