@@ -112,19 +112,19 @@ in
   gtk = {
     enable = true;
     theme = {
-      name = "Arc-Dark";
-      package = pkgs.arc-theme;
+      name = "SolArc";
+      package = pkgs.solarc-gtk-theme;
     };
   };
 
   # Cursor Theme
   home.pointerCursor = {
-    package = pkgs.gnome.adwaita-icon-theme;
-    name = "Adwaita";
+    package = pkgs.vanilla-dmz;
+    name = "DMZ-White";
     size = 24;
     x11 = {
       enable = true;
-      defaultCursor = "Adwaita";
+      defaultCursor = "DMZ-White";
     };
     gtk = {
       enable = true;

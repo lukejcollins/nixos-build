@@ -11,7 +11,7 @@
     exec-once = hyprpaper               # Start hyprpaper
     exec-once = systemctl --user import-environment # Ensure environment variables for user systemd units
     exec-once = mako                    # Launch mako
-    exec-once = hyprctl setcursor Adwaita 24 # Set cursor
+    exec-once = hyprctl setcursor DMZ-White 24 # Set cursor
     exec-once = waybar                  # Launch waybar
 
     # Environmental Variables

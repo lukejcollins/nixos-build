@@ -1,63 +1,24 @@
-/* =============================================================================
- *
- * Waybar inspired by arc dark
- *
- * =========================================================================== */
-
-/* Keyframe for warning blinks */
-@keyframes blink-warning {
-    70% {
-        color: #FFFFFF;
-    }
-    100% {
-        color: #FFFFFF;
-        background-color: #FFA500;
-    }
-}
-
-/* Keyframe for critical blinks */
-@keyframes blink-critical {
-    70% {
-        color: #FFFFFF;
-    }
-    100% {
-        color: #FFFFFF;
-        background-color: #FF0000;
-    }
-}
-
-/* Resetting common styles for all elements */
-* {
-    border: none;
-    border-radius: 0;
-    min-height: 0;
-    margin: 0;
-    padding: 0;
-}
-
 /* Styling the entire bar */
 #waybar {
-    background: rgba(45, 48, 59, 0.6);
-    color: #C4CBD4;
+    background: rgba(238, 232, 213, 0.6); /* Base2 */
+    color: #657b83; /* Base00 */
     font-family: Cantarell, Noto Sans, sans-serif, "Font Awesome 5 Free";
     font-size: 13px;
-    border-radius: 7px;
 }
-
-/* Common padding for each module */
 
 /* Battery styling */
 #battery {
     animation: linear infinite alternate;
     padding-right: 5px;
+    color: #073642; /* Base02 - Darker Blue */
 }
 
 #battery.warning {
-    color: #DC322F;
+    color: #7B6000; /* A darker shade of Yellow */
 }
 
 #battery.critical {
-    color: #CC6666;
+    color: #8B0000; /* A darker shade of Red */
 }
 
 #battery.warning.discharging {
@@ -73,35 +34,33 @@
 /* Clock styling */
 #clock {
     padding: 0 5px;
+    color: #5A5A00; /* Darker Green */
 }
 
 /* Network styling */
 #network {
     padding-right: 3px;
+    color: #5E5E9C; /* Darker Violet */
 }
 
 #network.disconnected {
-    color: #DC322F;
+    color: #8B0000; /* A darker shade of Red */
 }
 
 /* Workspaces styling */
-#workspaces button:first-child {
-  border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;
-}
-
 #workspaces button {
-    color: #586875;
-    background-color: #404155;
-    padding: 2px 10px 2px 10px;
+    color: #cb4b16; /* Orange */
+    background-color: #eee8d5; /* Base2 */
+    padding: 2px 10px;
 }
 
 #workspaces button.active {
-    color: #F9F9F9;
-    background-color: #4084D6;
+    color: #002b36; /* Base03 */
+    background-color: #93a1a1; /* Base1 */
 }
 
 #workspaces button.urgent {
-    color: #F9F9F9;
-    background-color: #A54242;
+    color: #fdf6e3; /* Base3 */
+    background-color: #dc322f; /* Red */
 }
+
