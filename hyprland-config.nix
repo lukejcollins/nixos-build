@@ -48,7 +48,7 @@
 
     # Decoration Configuration
     decoration {
-        rounding = 10                   # Rounding factor
+        rounding = 0                   # Rounding factor
         blur {
             enabled = true              # Enable blur
             size = 3                    # Blur size
@@ -93,7 +93,7 @@
     # System Control Bindings
     bind = $mainMod_SHIFT, C, exec, hyprctl reload # Reload system config
     bind = $mainMod_SHIFT, Q, killactive           # Kill active window
-    bind = $mainMod, ESCAPE, exec, swaylock --clock --screenshots --effect-pixelate 5 # Lock screen
+    bind = $mainMod, ESCAPE, exec, swaylock --clock --image //home/lukecollins/Pictures/screensaver.jpg # Lock screen
     bind = $mainMod, BACKSPACE, hy3:makegroup, opposite, ephemeral # Toggle split
     bind = $mainMod_SHIFT, E, exit                 # Exit system
 

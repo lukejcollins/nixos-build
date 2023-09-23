@@ -139,7 +139,7 @@ in
   # Home File Definitions
   home.file = {
     ".config/rofi/config.rasi".source = ./dotfiles/.config/rofi/config.rasi;
-    ".config/rofi/Arc-Dark.rasi".source = ./dotfiles/.config/rofi/Arc-Dark.rasi;
+    ".config/rofi/solarized-light.rasi".source = ./dotfiles/.config/rofi/solarized-light.rasi;
     ".config/nvim/init.vim".source = ./dotfiles/.config/nvim/init.vim;
     ".config/alacritty/alacritty.yml".source = ./dotfiles/.config/alacritty/alacritty.yml;
     ".config/swappy/config".source = ./dotfiles/.config/swappy/config;

@@ -5,39 +5,39 @@
  ***********************************************/
 
 * {
-    selected-normal-foreground:  rgba ( 249, 249, 249, 60 % );
-    foreground:                  rgba ( 196, 203, 212, 60 % );
+    selected-normal-foreground:  rgba(0, 43, 54, 60%);     /* Base03 */
+    foreground:                  rgba(88, 110, 117, 60%);  /* Base01 */
     normal-foreground:           @foreground;
-    alternate-normal-background: rgba ( 64, 69, 82, 60 % );
-    red:                         rgba ( 220, 50, 47, 60 % );
-    selected-urgent-foreground:  rgba ( 249, 249, 249, 60 % );
-    blue:                        rgba ( 38, 139, 210, 60 % );
-    urgent-foreground:           rgba ( 204, 102, 102, 60 % );
-    alternate-urgent-background: rgba ( 75, 81, 96, 60 % );
-    active-foreground:           rgba ( 101, 172, 255, 60 % );
-    lightbg:                     rgba ( 238, 232, 213, 60 % );
-    selected-active-foreground:  rgba ( 249, 249, 249, 60 % );
-    alternate-active-background: rgba ( 75, 81, 96, 60 % );
-    background:                  rgba ( 45, 48, 59, 60 % );
+    alternate-normal-background: rgba(238, 232, 213, 60%); /* Base2 */
+    red:                         rgba(220, 50, 47, 60%);   /* Red */
+    selected-urgent-foreground:  rgba(0, 43, 54, 60%);     /* Base03 */
+    blue:                        rgba(38, 139, 210, 60%);  /* Blue */
+    urgent-foreground:           rgba(203, 75, 22, 60%);   /* Orange */
+    alternate-urgent-background: rgba(238, 232, 213, 60%); /* Base2 */
+    active-foreground:           rgba(101, 123, 131, 60%); /* Base00 */
+    lightbg:                     rgba(253, 246, 227, 60%); /* Base3 */
+    selected-active-foreground:  rgba(0, 43, 54, 60%);     /* Base03 */
+    alternate-active-background: rgba(238, 232, 213, 60%); /* Base2 */
+    background:                  rgba(253, 246, 227, 60%); /* Base3 */
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
-    lightfg:                     rgba ( 88, 104, 117, 60 % );
-    selected-normal-background:  rgba ( 64, 132, 214, 60 % );
-    border-color:                rgba ( 94, 129, 172, 60 % );
+    lightfg:                     rgba(88, 110, 117, 60%);  /* Base01 */
+    selected-normal-background:  rgba(38, 139, 210, 60%);  /* Blue */
+    border-color:                rgba(131, 148, 150, 60%); /* Base0 */
     spacing:                     2;
-    separatorcolor:              rgba ( 29, 31, 33, 60 % );
-    urgent-background:           rgba ( 29, 31, 33, 60 % );
-    selected-urgent-background:  rgba ( 165, 66, 66, 60 % );
+    separatorcolor:              rgba(88, 110, 117, 60%);  /* Base01 */
+    urgent-background:           rgba(203, 75, 22, 60%);   /* Orange */
+    selected-urgent-background:  rgba(220, 50, 47, 60%);   /* Red */
     alternate-urgent-foreground: @urgent-foreground;
-    background-color:            rgba ( 0, 0, 0, 0 % );
+    background-color:            rgba(0, 0, 0, 0%);        /* Transparent */
     alternate-active-foreground: @active-foreground;
-    active-background:           rgba ( 29, 31, 33, 60 % );
-    selected-active-background:  rgba ( 68, 145, 237, 60 % );
+    active-background:           rgba(101, 123, 131, 60%); /* Base00 */
+    selected-active-background:  rgba(38, 139, 210, 60%);  /* Blue */
 }
 window {
     background-color: @background;
     border:           2;
-    border-radius:    10;
+    border-radius:    0;  /* Set radius to 0 to get rid of rounding */
     padding:          5;
 }
 mainbox {
