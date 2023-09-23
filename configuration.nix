@@ -42,11 +42,17 @@ in
     alacritty neovim google-chrome wget docker wob libfido2 gh swappy swaylock-effects
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez vscode gnome.gnome-boxes shfmt mako slurp 
-    wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar emacs29-pgtk
+    wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar
   ];
   virtualisation.docker.enable = true; # Enable Docker
   programs.dconf.enable = true; # Enable DConf for configuration management
   programs.zsh.enable = true; # Enable ZSH for the system
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+      sha256 = "sha256:0rjp59xqw8p5mi4dgm2mldn2rqx5a1pmimyvs5y5cnm9ihbyjnmv";
+    }))
+  ];
 
   # Sound and Media Configurations
   sound.enable = true; # Enable sound support
@@ -65,6 +71,10 @@ in
     };
     blueman.enable = true; # Blueman service for managing Bluetooth
     fwupd.enable = true; # Enable firmware update
+    emacs = {
+      package = pkgs.emacs-pgtk;
+      enable = true;
+    };
   };
 
   # Network and Bluetooth Configurations

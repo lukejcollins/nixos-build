@@ -91,7 +91,8 @@
     $mainMod = SUPER
     
     # System Control Bindings
-    bind = $mainMod_SHIFT, C, exec, hyprctl reload # Reload system config
+    bind = $mainMod_SHIFT, C, exec, hyprctl reload && pkill waybar && nohup waybar > /dev/null 2>&1 & pkill mako && nohup mako > /dev/null 2>&1 &
+ # Reload system config
     bind = $mainMod_SHIFT, Q, killactive           # Kill active window
     bind = $mainMod, ESCAPE, exec, swaylock --clock --image //home/lukecollins/Pictures/screensaver.jpg # Lock screen
     bind = $mainMod, BACKSPACE, hy3:makegroup, opposite, ephemeral # Toggle split

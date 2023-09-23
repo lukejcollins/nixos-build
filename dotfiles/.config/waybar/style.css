@@ -55,8 +55,8 @@
 }
 
 #workspaces button.active {
-    color: #002b36; /* Base03 */
-    background-color: #93a1a1; /* Base1 */
+    color: #fdf6e3; /* Base03 */
+    background-color: #268bd2; /* Base1 */
 }
 
 #workspaces button.urgent {
