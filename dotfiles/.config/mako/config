@@ -1,13 +1,13 @@
-background-color=#2f343f99
-text-color=#d3dae399
-border-color=#2f343f99
-border-radius=10
+background-color=#fdf6e699
+text-color=#657b8399
+border-color=#fdf6e699
+border-radius=0
 
 [urgency=low]
-border-color=#2f343f99
+border-color=#fdf6e699
 
 [urgency=normal]
-border-color=#5e81ac99
+border-color=#268bd299
 
 [urgency=high]
-border-color=#bf616a99
+border-color=#dc322f99
