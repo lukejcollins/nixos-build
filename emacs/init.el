@@ -24,6 +24,21 @@
   :custom
   (treemacs-theme "all-the-icons"))
 
+;; Use Helm
+(use-package helm
+  :ensure t
+  :config
+  (helm-mode 1)
+  :bind
+  (("M-x" . helm-M-x)))
+
+;; Use Vterm
+(use-package vterm
+  :ensure t
+  :config
+  ;; example of setting a vterm option
+  (setq vterm-max-scrollback 5000))
+
 ;; Clipboard Configuration
 (setq select-enable-clipboard t
       select-enable-primary t)
@@ -41,6 +56,9 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+
+;; Disable tooltip mode
+(tooltip-mode -1)
 
 ;; Flycheck Inline Configuration
 (use-package flycheck-inline

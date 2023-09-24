@@ -50,16 +50,9 @@ in
       alwaysTangle = true;
       package = pkgs.emacs-pgtk;
       extraEmacsPackages = epkgs: [
-        epkgs.use-package
-        epkgs.terraform-mode
-        epkgs.flycheck
-        epkgs.flycheck-inline
-        epkgs.dockerfile-mode
-        epkgs.nix-mode
-        epkgs.blacken
-        epkgs.treemacs
-        epkgs.treemacs-all-the-icons
-        epkgs.solarized-theme
+        epkgs.use-package epkgs.terraform-mode epkgs.flycheck epkgs.flycheck-inline
+        epkgs.dockerfile-mode epkgs.nix-mode epkgs.blacken epkgs.treemacs
+        epkgs.treemacs-all-the-icons epkgs.solarized-theme epkgs.helm epkgs.vterm
       ];
     })
   ];
