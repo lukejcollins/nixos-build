@@ -43,6 +43,25 @@ in
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez vscode gnome.gnome-boxes shfmt mako slurp 
     wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar
+    (emacsWithPackagesFromUsePackage {
+      config = ./emacs/init.el;
+      defaultInitFile = true;
+      alwaysEnsure = true;
+      alwaysTangle = true;
+      package = pkgs.emacs-pgtk;
+      extraEmacsPackages = epkgs: [
+        epkgs.use-package
+        epkgs.terraform-mode
+        epkgs.flycheck
+        epkgs.flycheck-inline
+        epkgs.dockerfile-mode
+        epkgs.nix-mode
+        epkgs.blacken
+        epkgs.treemacs
+        epkgs.treemacs-all-the-icons
+        epkgs.solarized-theme
+      ];
+    })
   ];
   virtualisation.docker.enable = true; # Enable Docker
   programs.dconf.enable = true; # Enable DConf for configuration management
@@ -71,10 +90,6 @@ in
     };
     blueman.enable = true; # Blueman service for managing Bluetooth
     fwupd.enable = true; # Enable firmware update
-    emacs = {
-      package = pkgs.emacs-pgtk;
-      enable = true;
-    };
   };
 
   # Network and Bluetooth Configurations

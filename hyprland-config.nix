@@ -174,5 +174,6 @@
     windowrulev2 = opacity 0.8 0.8,title:^(Bluetooth Devices)$
     windowrulev2 = opacity 0.8 0.8,title:^(wdisplays)$
     windowrulev2 = opacity 0.9 0.9,class:^(google-chrome)$
+    windowrulev2 = opacity 0.9 0.9,class:^(emacs)$
   '';
 }
