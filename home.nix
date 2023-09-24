@@ -6,7 +6,7 @@ let
 
   # Python Environment Definition
   myPythonEnv = pkgs.python3.withPackages (ps: with ps; [
-    pynvim flake8 pylint black requests
+    pynvim flake8 pylint black requests grip
   ]);
 
   # Tflint Installation Definition
@@ -51,6 +51,11 @@ let
   copilotSrc = builtins.fetchGit {
     url = "https://github.com/github/copilot.vim";
     rev = "1358e8e45ecedc53daf971924a0541ddf6224faf";
+  };
+
+  emacsCopilotSrc = builtins.fetchGit {
+    url = "https://github.com/zerolfx/copilot.el.git";
+    rev = "421703f5dd5218ec2a3aa23ddf09d5f13e5014c2";
   };
 
   # MesloLGS NF Font Definitions
@@ -155,6 +160,7 @@ in
     ".local/share/nvim/site/autoload/plug.vim".source = vimPlug;
     "/powerlevel10k".source = powerlevel10kSrc;
     ".config/nvim/pack/github/start/copilot.vim".source = copilotSrc;
+    ".emacsCopilot".source = emacsCopilotSrc;
     ".local/share/fonts/MesloLGS-NF/MesloLGS NF Regular.ttf".source = mesloLGSFonts.Regular;
     ".local/share/fonts/MesloLGS-NF/MesloLGS NF Bold.ttf".source = mesloLGSFonts.Bold;
     ".local/share/fonts/MesloLGS-NF/MesloLGS NF Italic.ttf".source = mesloLGSFonts.Italic;
