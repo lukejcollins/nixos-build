@@ -58,7 +58,6 @@
         (progn
           (require 'copilot)
           (add-hook 'prog-mode-hook 'copilot-mode)
-          (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
           (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion))
       
       ;; If there's an error, print a message (you can also log or take other actions)
