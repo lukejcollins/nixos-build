@@ -16,6 +16,9 @@
 ;; Disable tooltip mode
 (tooltip-mode -1)
 
+;; Disable auto save
+(setq auto-save-default nil)
+
 ;; Helm configuration
 (use-package helm
   :ensure t
