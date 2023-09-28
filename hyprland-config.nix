@@ -155,7 +155,7 @@
     bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
     # Lid switch event
-    bindl=,switch:Lid Switch,exec,swaylock --clock --screenshots --effect-pixelate 5 
+    bindl=,switch:Lid Switch,exec,swaylock --clock --image //home/lukecollins/Pictures/screensaver.jpg # Lock screen 
 
     # Layer rules
     layerrule = blur, notifications

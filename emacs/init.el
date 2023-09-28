@@ -19,6 +19,10 @@
 ;; Disable auto save
 (setq auto-save-default nil)
 
+;; Enable line numbers
+(global-display-line-numbers-mode 1)
+(add-hook 'treemacs-mode-hook (lambda() (display-line-numbers-mode -1)))
+
 ;; Helm configuration
 (use-package helm
   :ensure t
