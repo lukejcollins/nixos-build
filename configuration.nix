@@ -42,7 +42,7 @@ in
     alacritty neovim google-chrome wget docker wob libfido2 gh swappy swaylock-effects
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez vscode gnome.gnome-boxes shfmt mako slurp 
-    wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar gotop
+    wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar btop postgresql
     (emacsWithPackagesFromUsePackage {
       config = ./emacs/init.el;
       defaultInitFile = true;
