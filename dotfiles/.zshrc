@@ -33,9 +33,6 @@ plugins=(git)
 # Aliases
 # ===============
 
-# Alias nvim to vim
-alias vim='nvim'
-
 # Flake build alias
 alias flake-build='sudo nixos-rebuild switch --flake "$(pwd)#mySystem" && home-manager switch --flake "$(pwd)#myUser" --extra-experimental-features nix-command --extra-experimental-features flakes'
 
