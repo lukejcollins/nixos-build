@@ -43,6 +43,7 @@ in
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez vscode gnome.gnome-boxes shfmt mako slurp 
     wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar gotop postgresql
+    insomnia
     (emacsWithPackagesFromUsePackage {
       config = ./emacs/init.el;
       defaultInitFile = true;
@@ -63,7 +64,7 @@ in
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
       url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-      sha256 = "sha256:0pja7535rdjjimgf40had6njp9pkc2ilqhhc6bwczv9a83422b4r";
+      sha256 = "sha256:0b60fw1hw91s6qmzz3f3n4kv0vqvxlhk78066xajwlhb722p5c3c";
     }))
   ];
 
