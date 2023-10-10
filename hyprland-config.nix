@@ -112,8 +112,8 @@
     bind = , XF86AudioMute, exec, amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $XDG_RUNTIME_DIR/wob.sock
 
     # Brightness Control Bindings
-    bind = , XF86MonBrightnessUp, exec, brightnessctl set +10%
-    bind = , XF86MonBrightnessDown, exec, brightnessctl set 10%- -n 1%
+    bind = , XF86MonBrightnessUp, exec, brightnessctl set +5%
+    bind = , XF86MonBrightnessDown, exec, brightnessctl set 5%- -n 10%
 
     # Screenshot Binding
     bind = $mainMod, P, exec, grim -g "$(slurp)" - | swappy -f -
