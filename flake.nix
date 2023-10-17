@@ -13,10 +13,10 @@
     # Ensure home-manager uses the same nixpkgs as this flake
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprland.url = "github:hyprwm/hyprland/b662215fad037e41872d5b820a70577752469520";
+    hyprland.url = "github:hyprwm/hyprland";
 
     hy3 = {
-      url = "github:outfoxxed/hy3/43402f85ff1424aa7bd93d916c82cf781f9074cd";
+      url = "github:outfoxxed/hy3";
       inputs.hyprland.follows = "hyprland";
     };
   };

@@ -18,7 +18,7 @@ in
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_6_4; # Specify the Linux kernel package version
+    kernelPackages = pkgs.linuxPackages_6_5; # Specify the Linux kernel package version
   };
   
   # Disable all power management related services
