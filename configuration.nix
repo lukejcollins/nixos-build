@@ -43,7 +43,7 @@ in
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez vscode gnome.gnome-boxes shfmt mako slurp 
     wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar gotop postgresql
-    insomnia docker-compose lsof
+    insomnia docker-compose lsof pgadmin4-desktopmode
     (emacsWithPackagesFromUsePackage {
       config = ./emacs/init.el;
       defaultInitFile = true;
