@@ -39,7 +39,7 @@ in
 
   # Software and Package Configurations
   environment.systemPackages = with pkgs; [ # List of packages to be globally installed
-    alacritty neovim google-chrome wget docker wob libfido2 gh swappy swaylock-effects
+    alacritty google-chrome wget docker wob libfido2 gh swappy swaylock-effects
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez vscode gnome.gnome-boxes shfmt mako slurp 
     wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar gotop postgresql
@@ -64,7 +64,7 @@ in
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
       url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-      sha256 = "sha256:1imgvp3gxs2lw2ry55g7v2xgyfmym1ra6hw1sdchdzxj38fgx97l";
+      sha256 = "sha256:0x02cd1i981s0rnx9v5jzm8mp7wkd6x7n9q9jqgk4mniagl63xwm";
     }))
   ];
 

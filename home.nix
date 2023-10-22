@@ -42,17 +42,11 @@ let
     '';
   };
 
-  # Powerlevel10k and Copilot.vim Git Sources
+  # Emacs Copilot and Powerlevel10k Installation Definitions
   powerlevel10kSrc = builtins.fetchGit {
     url = "https://github.com/romkatv/powerlevel10k.git";
     rev = "017395a266aa15011c09e64e44a1c98ed91c478c";
   };
-
-  copilotSrc = builtins.fetchGit {
-    url = "https://github.com/github/copilot.vim";
-    rev = "1358e8e45ecedc53daf971924a0541ddf6224faf";
-  };
-
   emacsCopilotSrc = builtins.fetchGit {
     url = "https://github.com/zerolfx/copilot.el.git";
     rev = "421703f5dd5218ec2a3aa23ddf09d5f13e5014c2";
@@ -80,12 +74,6 @@ let
       name = "MesloLGS-NF-Bold-Italic.ttf";
       sha256 = "080jipmy5jpik27wcvripinmhv9jvlcbivr4ng255h6fvqd17d2n";
     };
-  };
-
-  # Vim Plug Installation Definition
-  vimPlug = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/junegunn/vim-plug/0.11.0/plug.vim";
-    sha256 = "0lm582jb9y571jpny8pkp72i8ms6ncrij99v0r8zc7qmqcic8k8d";
   };
 
 in
@@ -145,7 +133,6 @@ in
   home.file = {
     ".config/rofi/config.rasi".source = ./dotfiles/.config/rofi/config.rasi;
     ".config/rofi/solarized-light.rasi".source = ./dotfiles/.config/rofi/solarized-light.rasi;
-    ".config/nvim/init.vim".source = ./dotfiles/.config/nvim/init.vim;
     ".config/alacritty/alacritty.yml".source = ./dotfiles/.config/alacritty/alacritty.yml;
     ".config/swappy/config".source = ./dotfiles/.config/swappy/config;
     ".config/hypr/hyprpaper.conf".source = ./dotfiles/.config/hypr/hyprpaper.conf;
@@ -157,9 +144,7 @@ in
     ".local/share/applications/shutdown.desktop".source = ./dotfiles/.local/share/applications/shutdown.desktop;
     ".local/share/applications/reboot.desktop".source = ./dotfiles/.local/share/applications/reboot.desktop;
     ".local/share/applications/logout.desktop".source = ./dotfiles/.local/share/applications/logout.desktop;
-    ".local/share/nvim/site/autoload/plug.vim".source = vimPlug;
     "/powerlevel10k".source = powerlevel10kSrc;
-    ".config/nvim/pack/github/start/copilot.vim".source = copilotSrc;
     ".emacsCopilot".source = emacsCopilotSrc;
     ".local/share/fonts/MesloLGS-NF/MesloLGS NF Regular.ttf".source = mesloLGSFonts.Regular;
     ".local/share/fonts/MesloLGS-NF/MesloLGS NF Bold.ttf".source = mesloLGSFonts.Bold;
