@@ -88,7 +88,16 @@ in
   };
 
   # Network and Bluetooth Configurations
-  networking.networkmanager.enable = true; # Enable NetworkManager for network management
+  networking = {
+    networkmanager.enable = true; # Enable NetworkManager for network management
+    hosts = { # Hosts file configurations
+      "127.0.0.1" = [
+      "facebook.com" "news.google.com" "old.reddit.com" "reddit.com" "theguardian.com"
+      "youtube.com" "www.facebook.com" "www.reddit.com" "www.theguardian.com"
+      "www.youtube.com"
+      ];
+    };
+  };
   hardware = {
     bluetooth = {
       enable = true;
