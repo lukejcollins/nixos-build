@@ -22,7 +22,7 @@
   };
 
   # Define the outputs of the flake
-  outputs = { self, nixpkgs, home-manager, hyprland, hy3, ... }: {
+  outputs = { self, nixpkgs, home-manager, hyprland, hy3, ... } @ inputs: {
     # Import user-specific configuration
     userConfig = import ./user-config.nix;
 
@@ -30,6 +30,8 @@
     nixosConfigurations.mySystem = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # System architecture
 
+      specialArgs = { inherit inputs; };
+      
       # List of NixOS configuration modules
       modules = [
         (import ./configuration.nix)

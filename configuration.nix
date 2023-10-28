@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let
   # Import user-specific configuration
@@ -61,6 +61,10 @@ in
   virtualisation.docker.enable = true; # Enable Docker
   programs.dconf.enable = true; # Enable DConf for configuration management
   programs.zsh.enable = true; # Enable ZSH for the system
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
       url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
@@ -116,8 +120,4 @@ in
     };
   };
   security.pam.services.swaylock = { allowNullPassword = true; }; # Enable PAM for Swaylock
-  xdg.portal = {
-    enable = true; # Enable xdg desktop integration
-    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
-  };
 }
