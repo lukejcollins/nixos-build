@@ -43,7 +43,7 @@ in
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez vscode gnome.gnome-boxes shfmt mako slurp 
     wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar gotop postgresql
-    insomnia docker-compose lsof pgadmin4-desktopmode
+    insomnia docker-compose
     (emacsWithPackagesFromUsePackage {
       config = ./emacs/init.el;
       defaultInitFile = true;
@@ -64,7 +64,7 @@ in
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
       url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-      sha256 = "sha256:0x02cd1i981s0rnx9v5jzm8mp7wkd6x7n9q9jqgk4mniagl63xwm";
+      sha256 = "sha256:17wrjcswbzw5fdrwk3p6m45xhkmn664kx6pn87d9mffxhm5br0i3";
     }))
   ];
 
