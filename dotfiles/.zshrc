@@ -48,5 +48,5 @@ alias nixos-clean='sudo nix-env --delete-generations old -p /nix/var/nix/profile
 
 # Auto-launch Hyprland
 if [ "$(tty)" = "/dev/tty1" ]; then
-    exec Hyprland
+    exec nixGLIntel Hyprland
 fi
