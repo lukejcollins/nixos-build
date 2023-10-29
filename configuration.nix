@@ -43,7 +43,7 @@ in
     nodejs python3 python3Packages.pip shellcheck wdisplays git blueman brightnessctl hyprpaper
     home-manager pavucontrol alsa-utils grim bluez vscode gnome.gnome-boxes shfmt mako slurp 
     wl-clipboard unzip statix nixpkgs-fmt neofetch rofi-wayland libnotify waybar gotop postgresql
-    insomnia docker-compose
+    insomnia docker-compose tailscale
     (emacsWithPackagesFromUsePackage {
       config = ./emacs/init.el;
       defaultInitFile = true;
@@ -89,6 +89,7 @@ in
     };
     blueman.enable = true; # Blueman service for managing Bluetooth
     fwupd.enable = true; # Enable firmware update
+    tailscale.enable = true; # Enable Tailscale
   };
 
   # Network and Bluetooth Configurations
