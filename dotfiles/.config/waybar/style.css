@@ -1,7 +1,9 @@
+@import "./rose-pine-dawn.css";
+
 /* Styling the entire bar */
 #waybar {
-    background: rgba(238, 232, 213, 0.6); /* Base2 */
-    color: #657b83; /* Base00 */
+    background: @surface;
+    color: @text;
     font-family: Cantarell, Noto Sans, sans-serif, "Font Awesome 5 Free";
     font-size: 13px;
 }
@@ -10,15 +12,15 @@
 #battery {
     animation: linear infinite alternate;
     padding-right: 5px;
-    color: #073642; /* Base02 - Darker Blue */
+    color: @pine;
 }
 
 #battery.warning {
-    color: #7B6000; /* A darker shade of Yellow */
+    color: @gold;
 }
 
 #battery.critical {
-    color: #8B0000; /* A darker shade of Red */
+    color: @rose;
 }
 
 #battery.warning.discharging {
@@ -34,33 +36,32 @@
 /* Clock styling */
 #clock {
     padding: 0 5px;
-    color: #5A5A00; /* Darker Green */
+    color: @love;
 }
 
 /* Network styling */
 #network {
     padding-right: 3px;
-    color: #5E5E9C; /* Darker Violet */
+    color: @foam;
 }
 
 #network.disconnected {
-    color: #8B0000; /* A darker shade of Red */
+    color: @rose;
 }
 
 /* Workspaces styling */
 #workspaces button {
-    color: #cb4b16; /* Orange */
-    background-color: #eee8d5; /* Base2 */
+    color: @pine;
+    background-color: @highlightLow;
     padding: 2px 10px;
 }
 
 #workspaces button.active {
-    color: #fdf6e3; /* Base03 */
-    background-color: #268bd2; /* Base1 */
+    color: @rose;
+    background-color: @pine;
 }
 
 #workspaces button.urgent {
-    color: #fdf6e3; /* Base3 */
-    background-color: #dc322f; /* Red */
+    color: @surface;
+    background-color: @love;
 }
-
