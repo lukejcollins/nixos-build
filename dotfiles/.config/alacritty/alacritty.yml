@@ -1,6 +1,3 @@
-window:
-  opacity: 0.80
-
 colors:
   primary:
     background: "0xfaf4ed"

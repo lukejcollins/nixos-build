@@ -3,9 +3,9 @@
 * Maintainer: DankChoir
 */
 
-@define-color base rgba(250, 244, 237, 0.6);
-@define-color surface rgba(255, 250, 243, 0.6);
-@define-color overlay rgba(242, 233, 225, 0.6);
+@define-color base rgba(250, 244, 237, 1);
+@define-color surface rgba(255, 250, 243, 1);
+@define-color overlay rgba(242, 233, 225, 1);
 
 @define-color muted #9893a5;
 @define-color subtle #797593;
@@ -18,6 +18,6 @@
 @define-color foam #56949f;
 @define-color iris #907aa9;
 
-@define-color highlightLow rgba(244, 237, 232, 0.6);
-@define-color highlightMed rgba(223, 218, 217, 0.6);
-@define-color highlightHigh rgba(206, 202, 205, 0.6);
+@define-color highlightLow rgba(244, 237, 232, 1);
+@define-color highlightMed rgba(223, 218, 217, 1);
+@define-color highlightHigh rgba(206, 202, 205, 1);
