@@ -53,7 +53,7 @@ in
       extraEmacsPackages = epkgs: [
         epkgs.use-package epkgs.terraform-mode epkgs.flycheck epkgs.flycheck-inline
         epkgs.dockerfile-mode epkgs.nix-mode epkgs.blacken epkgs.treemacs
-        epkgs.treemacs-all-the-icons epkgs.solarized-theme epkgs.helm epkgs.vterm
+        epkgs.treemacs-all-the-icons epkgs.modus-themes epkgs.helm epkgs.vterm
         epkgs.markdown-mode epkgs.grip-mode epkgs.dash epkgs.s epkgs.editorconfig
       ];
     })

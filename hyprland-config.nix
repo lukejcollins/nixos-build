@@ -157,23 +157,8 @@
     # Lid switch event
     bindl=,switch:Lid Switch,exec,swaylock --clock --image //home/lukecollins/Pictures/screensaver.jpg # Lock screen 
 
-    # Layer rules
-    layerrule = blur, notifications
-    layerrule = ignorezero, notifications
-    layerrule = blur, rofi
-    layerrule = ignorezero, rofi
-    layerrule = blur, waybar
-    layerrule = ignorezero, waybar
-
     # Resize window & move floating window
     bindm = $mainMod, mouse:272, resizewindow
     bindm = CTRL, mouse:273, movewindow
-
-    # Window rules
-    windowrulev2 = opacity 0.8 0.8,title:^(Volume Control)$
-    windowrulev2 = opacity 0.8 0.8,title:^(Bluetooth Devices)$
-    windowrulev2 = opacity 0.8 0.8,title:^(wdisplays)$
-    windowrulev2 = opacity 0.9 0.9,class:^(google-chrome)$
-    windowrulev2 = opacity 0.9 0.9,class:^(emacs)$
   '';
 }
