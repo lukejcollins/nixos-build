@@ -105,8 +105,8 @@ in
   gtk = {
     enable = true;
     theme = {
-      name = "SolArc";
-      package = pkgs.solarc-gtk-theme;
+      name = "rose-pine-dawn";
+      package = pkgs.rose-pine-gtk-theme;
     };
   };
 

@@ -1,13 +1,21 @@
-background-color=#fdf6e699
-text-color=#07364299
-border-color=#fdf6e699
-border-radius=0
+# General settings using the "rose pine dawn" palette
+background-color=#faf4ed
+text-color=#575279
+border-color=#d7827e
+border-radius=6
 
+# Settings for different urgencies
 [urgency=low]
-border-color=#fdf6e699
+background-color=#faf4ed
+text-color=#575279
+border-color=#ea9d34
 
 [urgency=normal]
-border-color=#268bd299
+background-color=#faf4ed
+text-color=#575279
+border-color=#286983
 
 [urgency=high]
-border-color=#dc322f99
+background-color=#faf4ed
+text-color=#575279
+border-color=#b4637a
