@@ -4,6 +4,33 @@ let
   # Import user-specific configuration
   userConfig = import ./user-config.nix;
 
+  rosePineDawnEmacs = pkgs.stdenv.mkDerivation rec {
+    pname = "rose-pine-dawn-emacs";
+    version = "2023-10-31"; # Or any other version/date indication you find suitable
+
+    src = pkgs.fetchFromGitHub {
+      owner = "thongpv87";
+      repo = "rose-pine-emacs";
+      rev = "master"; # Or a specific commit hash
+      sha256 = "sha256-8xFnwynJtIHP2ZEMZswVyeKzG+tE8BffKaZnf46eLm8="; # This is a placeholder, replace with the actual hash
+    };
+
+    buildInputs = [ pkgs.emacs pkgs.emacsPackages.autothemer ];
+
+    buildPhase = ''
+      emacs --batch -f batch-byte-compile rose-pine-dawn-theme.el
+    '';
+
+    installPhase = ''
+      mkdir -p $out/share/emacs/site-lisp/elpa/rose-pine-dawn-${version}
+      cp *.el *.elc $out/share/emacs/site-lisp/elpa/rose-pine-dawn-${version}
+    '';
+
+    meta = {
+      description = "Rose Pine Dawn theme for Emacs";
+      license = pkgs.lib.licenses.mit; # Adjust if necessary
+    };
+  };
 in
 {
   # General System Configurations
@@ -55,6 +82,7 @@ in
         epkgs.dockerfile-mode epkgs.nix-mode epkgs.blacken epkgs.treemacs
         epkgs.treemacs-all-the-icons epkgs.modus-themes epkgs.helm epkgs.vterm
         epkgs.markdown-mode epkgs.grip-mode epkgs.dash epkgs.s epkgs.editorconfig
+        epkgs.autothemer rosePineDawnEmacs
       ];
     })
   ];
