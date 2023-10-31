@@ -1,10 +1,10 @@
 (require 'use-package)
 
 ;; Theme
-(use-package solarized-theme
+(use-package rose-pine-dawn-theme
   :ensure t
   :config
-  (load-theme 'modus-operandi t))
+  (load-theme 'rose-pine-dawn t))
 
 ;; Startup appearance
 (setq fancy-splash-image "~/Pictures/gnu_color.png")
