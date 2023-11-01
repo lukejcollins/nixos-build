@@ -38,6 +38,32 @@
   (use-package treemacs-all-the-icons
     :ensure t))
 
+(defun my-treemacs-add-project-with-name ()
+  "Add a project to the Treemacs workspace with a custom name."
+  (interactive)
+  (let* ((path (read-directory-name "Project root: "))
+         (name (read-string "Project name: " (file-name-nondirectory (directory-file-name path))))
+         (project (list :name name :path path)))
+    (if (treemacs-workspace->is-empty?)
+        (treemacs-do-create-workspace)
+      (treemacs-do-add-project-to-workspace path name))))
+
+(with-eval-after-load 'treemacs
+  (define-key treemacs-mode-map (kbd "A a") #'my-treemacs-add-project-with-name))
+
+;; Ivy configuration
+(use-package ivy
+  :ensure t
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t))
+
+;; Counsel configuration
+(use-package counsel
+  :ensure t
+  :bind (("M-y" . counsel-yank-pop)
+	 ("C-x C-f" . counsel-find-file)))
+
 ;; Enable grip-mode
 (use-package grip-mode :ensure t)
 

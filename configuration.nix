@@ -82,7 +82,7 @@ in
         epkgs.dockerfile-mode epkgs.nix-mode epkgs.blacken epkgs.treemacs
         epkgs.treemacs-all-the-icons epkgs.modus-themes epkgs.helm epkgs.vterm
         epkgs.markdown-mode epkgs.grip-mode epkgs.dash epkgs.s epkgs.editorconfig
-        epkgs.autothemer rosePineDawnEmacs
+        epkgs.autothemer rosePineDawnEmacs epkgs.ivy epkgs.counsel
       ];
     })
   ];
