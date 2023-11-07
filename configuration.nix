@@ -130,6 +130,7 @@ in
       "www.youtube.com" "bbc.co.uk" "www.bbc.co.uk" "www.neowin.net" "neowin.net"
       ];
     };
+    firewall.enable = false; # Disable the firewall
   };
   hardware = {
     bluetooth = {
