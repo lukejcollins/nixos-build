@@ -12,11 +12,11 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Import Hyprland for the Hypr window manager and related configurations
-    hyprland.url = "github:hyprwm/hyprland/200cccdd3bbb3e093164d6cce61eedfe527f74da";
+    hyprland.url = "github:hyprwm/hyprland";
 
     # Import hy3: a plugin for the Hypr window manager
     hy3 = {
-      url = "github:outfoxxed/hy3/f4081531bdc8c9f5a38261867b7107c746db7eee";
+      url = "github:outfoxxed/hy3";
       # Ensure that hy3 uses the same version of Hyprland as this Flake
       inputs.hyprland.follows = "hyprland";
     };
