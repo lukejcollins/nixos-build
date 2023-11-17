@@ -42,6 +42,9 @@ alias flake-update='sudo nix flake update --extra-experimental-features nix-comm
 # NixOS clean
 alias nixos-clean='sudo nix-env --delete-generations old -p /nix/var/nix/profiles/system && sudo nix-collect-garbage -d && flake-build'
 
+# Connect to Forticlient
+alias forticlient='sudo openfortivpn -c /home/lukecollins/.config/vpn --username=ovoenergy/luke.collins --pppd-accept-remote'
+
 # ===============
 # Miscellaneous Configurations
 # ===============
