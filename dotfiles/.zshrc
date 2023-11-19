@@ -43,7 +43,10 @@ alias flake-update='sudo nix flake update --extra-experimental-features nix-comm
 alias nixos-clean='sudo nix-env --delete-generations old -p /nix/var/nix/profiles/system && sudo nix-collect-garbage -d && flake-build'
 
 # Connect to Forticlient
-alias forticlient='sudo openfortivpn -c /home/lukecollins/.config/vpn --username=ovoenergy/luke.collins --pppd-accept-remote'
+alias forti-connect='sudo echo -n "Enter your OTP: " && read MYOTP && sudo -E nohup openfortivpn -c /home/lukecollins/.config/vpn --pppd-accept-remote -o "$MYOTP" >/dev/null 2>&1 &'
+
+# Disconnect from Forticlient
+alias forti-kill='sudo pkill openfortivpn'
 
 # ===============
 # Miscellaneous Configurations
