@@ -13,6 +13,9 @@
 (setq select-enable-clipboard t
       select-enable-primary t)
 
+;; Disable backup files
+(setq make-backup-files nil)
+
 ;; Disable tooltip mode
 (tooltip-mode -1)
 
