@@ -4,10 +4,10 @@
   # Define Flake inputs
   inputs = {
     # Import the unstable branch of Nixpkgs from GitHub
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/0816d1426f0725db57335d974ea6fd3d25a13a4a";
 
     # Import Home Manager for user-specific configurations
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/aeb2232d7a32530d3448318790534d196bf9427a";
     # Ensure that Home Manager uses the same Nixpkgs version as this Flake
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
