@@ -134,3 +134,19 @@
                                      ((eq major-mode 'nix-mode) (shell-command-on-region (point-min) (point-max) "nixpkgs-fmt" (current-buffer) t))
                                      ((eq major-mode 'terraform-mode) (shell-command-on-region (point-min) (point-max) "terraform fmt" nil t))
                                      (t (message "No formatter specified for %s" major-mode)))))
+
+;; LSP configuration
+(use-package lsp-mode
+  :ensure t
+  :commands (lsp lsp-deferred)
+  :hook (rust-mode . lsp-deferred))
+
+;; Rust Mode
+(use-package rust-mode
+  :ensure t
+  :mode "\\.rs\\'")
+
+;; Rust LSP
+(use-package lsp-ui :commands lsp-ui-mode)
+(use-package company :hook (after-init . global-company-mode))
+(use-package flycheck :init (global-flycheck-mode))
